@@ -2,13 +2,53 @@
 /* Variables */
 /* Mixins */
 /* Main */
-header .navbar {
+.container-fluid {
+  padding: 0px;
+}
+
+.container-fluid .navbar {
   padding: 0em;
 }
 
-header .navbar .navbar-brand {
+.container-fluid .navbar .navbar-brand {
   padding-top: 0em;
   padding-bottom: 0em;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80vh;
+}
+
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1100px;
+  height: 48%;
+  border: 1px solid #151a1f;
+}
+
+.container .row .col--mod {
+  height: 90%;
+  width: 45%;
+  border: 1px solid #da201a;
 }
 
 footer {
@@ -20,6 +60,8 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  height: 100px;
 }
 
 /* Variables */

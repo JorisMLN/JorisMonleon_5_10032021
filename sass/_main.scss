@@ -1,12 +1,10 @@
-
 @import "variable&Mixin";
-
-
 
 
 /* Main */
 
-header{
+.container-fluid{
+    padding: 0px;
     .navbar{
         padding: 0em;
         .navbar-brand{
@@ -15,6 +13,26 @@ header{
         }
     }    
 }
+
+.container{
+    @include flexAroundCenter;
+    flex-direction: column;
+    height: 80vh;
+    .row{
+        @include flexAroundCenter;
+        width: 1100px;
+        height: 48%;
+        border: 1px solid rgb(21, 26, 31);
+        .col--mod{
+            height: 90%;
+            width: 45%;
+            border: 1px solid rgb(218, 32, 26);
+        }
+    }
+}
+
 footer{
     @include flexAroundCenter;
+    width: 100%;
+    height: 100px;
 }
