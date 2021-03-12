@@ -1,0 +1,20 @@
+
+@import "variable&Mixin";
+
+
+
+
+/* Main */
+
+header{
+    .navbar{
+        padding: 0em;
+        .navbar-brand{
+            padding-top: 0em;
+            padding-bottom: 0em;
+        }
+    }    
+}
+footer{
+    @include flexAroundCenter;
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* Variables */
+/* Mixins */
+/* Main */
+header .navbar {
+  padding: 0em;
+}
+
+header .navbar .navbar-brand {
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* Variables */
+/* Mixins */
+/* Animation d'arrivée sur la page */
+/* Loading Animation */
+/*# sourceMappingURL=styles.css.map */

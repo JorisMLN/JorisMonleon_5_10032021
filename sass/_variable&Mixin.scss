@@ -1,0 +1,19 @@
+/* Variables */
+
+$primaire: #132B40;
+$secondaire: #224459;
+$tertiaire: #4A738C;
+$fire: #AEDFF2;
+$sand: #BBE8F2;
+
+/* Mixins */
+@mixin flexAroundCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin flexBetweenCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
