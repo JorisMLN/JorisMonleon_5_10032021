@@ -32,12 +32,48 @@
             </div>
         </nav>
     </header>
+
+    <!-- Main -->
     <section class="container">
         <h1>P A N I E R</h1>
-    <div>
-        <a href="commande.html">Commande</a>
-    </div>
+        <article class="panier__page">
+            <div class="panier__page--left">
+                <p>Récapitulatif commande</p>
+            </div>
+            <div class="panier__page--right">
+                <div class="formulaire">
+                    <form method="post" action="traitement.js">
+
+                        <fieldset>
+                            <label for="nom">Nom:</label>
+                            <input type="text" name="nom" id="nom" />
+                            <label for="prenom">Prénom:</label>
+                            <input type="text" name="prenom" id="prenom" />
+                            <br />
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="adress">Adress:</label>
+                            <input type="text" name="adress" id="adress" />
+                            <label for="ville">Ville:</label>
+                            <input type="text" name="ville" id="ville" />
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="email">E-mail:</label>
+                            <input type="email" name="email" id="email" />
+                        </fieldset>
+
+                     </form>
+                </div>
+                <a href="commande.html" class="button">Commander !</a>
+            </div>  
+        </article>
+    
+
     </section>
+
+    <!-- Footer -->
     <footer class="bg-dark">
         <div class="row">
             <div class="col">
@@ -45,5 +81,6 @@
             </div>
         </div>
     </footer>
+    
 </body>
 </html>
