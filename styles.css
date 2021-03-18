@@ -39,11 +39,15 @@
           align-items: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  width: 10%;
+  width: 15%;
   height: 90px;
 }
 
-.container-fluid .navbar .navbar__link a {
+.container-fluid .navbar .navbar__link--accueil {
+  width: 40%;
+}
+
+.container-fluid .navbar .navbar__link--accueil a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +64,31 @@
   height: 40%;
   border: 1px solid black;
   border-radius: 8px;
-  background-color: #888a8d;
+  background-color: #BBE8F2;
+}
+
+.container-fluid .navbar .navbar__link--panier {
+  width: 40%;
+}
+
+.container-fluid .navbar .navbar__link--panier a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: black;
+  text-decoration: none;
+  width: 80%;
+  height: 40%;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #BBE8F2;
 }
 
 .container {
@@ -72,7 +100,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #888a8d;
+  background-color: #224459;
   border-radius: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -80,6 +108,10 @@
           flex-direction: column;
   height: 80vh;
   width: 90%;
+}
+
+.container img {
+  overflow: hidden;
 }
 
 .container .row {
@@ -95,7 +127,8 @@
   overflow: hidden;
   width: 98%;
   height: 18%;
-  border: 1px solid #151a1f;
+  border: 1px solid #132B40;
+  background-color: #BBE8F2;
 }
 
 .container .row__left {
@@ -142,13 +175,11 @@
 .container .row__mid .title__name {
   width: 49%;
   height: 99%;
-  border: 1px solid red;
 }
 
 .container .row__mid .title__id {
   width: 49%;
   height: 99%;
-  border: 1px solid red;
 }
 
 .container .row__mid__description {
@@ -160,7 +191,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
   height: 79%;
 }
 
@@ -183,9 +213,10 @@
 }
 
 .container .row__right__price {
-  border: 1px solid red;
-  width: 80%;
-  height: 40%;
+  border: 2px solid #4A738C;
+  border-radius: 10px;
+  width: 30%;
+  height: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,7 +228,7 @@
 }
 
 .container .row__right .button {
-  border: 1px solid red;
+  border: 2px solid #132B40;
   border-radius: 10px;
   width: 80%;
   height: 40%;

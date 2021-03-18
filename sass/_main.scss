@@ -16,37 +16,58 @@
         .navbar__link{
             @include flexAroundCenter;
             align-self: flex-end;
-            width: 10%;
+            width: 15%;
             height: 90px;
-            a{
-                @include flexAroundCenter;
-                align-self: center;
-                color: black;
-                text-decoration: none;
-                width: 80%;
-                height: 40%;
-                border: 1px solid black;
-                border-radius: 8px;
-                background-color: #888a8d;
-            }   
+            &--accueil{
+                width: 40%;
+                a{
+                    @include flexAroundCenter;
+                    align-self: center;
+                    color: black;
+                    text-decoration: none;
+                    width: 80%;
+                    height: 40%;
+                    border: 1px solid black;
+                    border-radius: 8px;
+                    background-color: $sand;
+                }   
+            }
+            &--panier{
+                width: 40%;
+                a{
+                    @include flexAroundCenter;
+                    align-self: center;
+                    color: black;
+                    text-decoration: none;
+                    width: 80%;
+                    height: 40%;
+                    border: 1px solid black;
+                    border-radius: 8px;
+                    background-color: $sand;
+                }   
+            }  
         }
     }    
 }
 
 .container{
     @include flexAroundCenter;
-    background-color: #888a8d;
+    background-color: $secondaire;
     border-radius: 10px;
     flex-direction: column;
     height: 80vh;
     width: 90%;
+    img{
+        overflow: hidden;
+    }
     .row{
         @include flexAroundCenter;
         border-radius: 8px;
         overflow: hidden;
         width: 98%;
         height: 18%;
-        border: 1px solid rgb(21, 26, 31);
+        border: 1px solid $primaire;
+        background-color: $sand;
         &__left{
             height: 99%;
             width: 25%;
@@ -68,17 +89,14 @@
                 &__name{
                     width: 49%;
                     height: 99%;
-                    border: 1px solid red;
                 }
                 &__id{
                     width: 49%;
                     height: 99%;
-                    border: 1px solid red;
                 }
             }
             &__description{
                 @include flexAroundCenter;
-                border: 1px solid red;
                 height: 79%;
             }
         }
@@ -89,13 +107,14 @@
             width: 20%;
             overflow: hidden;
             &__price{
-                border: 1px solid red;
-                width: 80%;
-                height: 40%;
+                border: 2px solid $tertiaire;
+                border-radius: 10px;
+                width: 30%;
+                height: 30%;
                 @include flexAroundCenter;
             }
             .button{
-                border: 1px solid red;
+                border: 2px solid $primaire;
                 border-radius: 10px;
                 width: 80%;
                 height: 40%;
