@@ -44,7 +44,7 @@
 }
 
 .container-fluid .navbar .navbar__link--accueil {
-  width: 40%;
+  width: 45%;
 }
 
 .container-fluid .navbar .navbar__link--accueil a {
@@ -62,13 +62,13 @@
   text-decoration: none;
   width: 80%;
   height: 40%;
-  border: 1px solid black;
+  border: 2px solid white;
   border-radius: 8px;
   background-color: #BBE8F2;
 }
 
 .container-fluid .navbar .navbar__link--panier {
-  width: 40%;
+  width: 45%;
 }
 
 .container-fluid .navbar .navbar__link--panier a {
@@ -86,7 +86,7 @@
   text-decoration: none;
   width: 80%;
   height: 40%;
-  border: 1px solid black;
+  border: 2px solid white;
   border-radius: 8px;
   background-color: #BBE8F2;
 }
@@ -101,7 +101,6 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #224459;
-  border-radius: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -123,10 +122,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   width: 98%;
-  height: 18%;
+  height: 17%;
   border: 1px solid #132B40;
   background-color: #BBE8F2;
 }
@@ -258,6 +257,7 @@ footer {
           align-items: center;
   width: 100%;
   height: 100px;
+  color: white;
 }
 
 /* Teddy's Page */
@@ -271,7 +271,6 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   background-color: #224459;
-  border-radius: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -292,7 +291,7 @@ footer {
           align-items: center;
   height: 80%;
   width: 90%;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid #132B40;
   background-color: #BBE8F2;
 }
@@ -309,7 +308,7 @@ footer {
   width: 48%;
   height: 90%;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .container .teddy__page--left img {
@@ -333,7 +332,8 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid red;
+  border: 1px solid #132B40;
+  border-radius: 5px;
   width: 48%;
   height: 80%;
 }
@@ -352,7 +352,11 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 80%;
-  height: 20%;
+  height: 15%;
+}
+
+.container .teddy__page--right--nameID h2 {
+  font-size: 12px;
 }
 
 .container .teddy__page--right--description {
@@ -365,8 +369,8 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid red;
-  width: 80%;
-  height: 65%;
+  width: 100%;
+  height: 55%;
 }
 
 .container .teddy__page--right .button {
@@ -400,7 +404,6 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   background-color: #224459;
-  border-radius: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -438,7 +441,7 @@ footer {
   width: 30%;
   height: 90%;
   border-radius: 10px;
-  border: 1px solid red;
+  border: 1px solid #132B40;
 }
 
 .container .panier__page--right {
@@ -454,10 +457,10 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70%;
+  width: 60%;
   height: 90%;
   border-radius: 10px;
-  border: 1px solid red;
+  border: 1px solid #132B40;
 }
 
 .container .panier__page--right .formulaire {
@@ -470,7 +473,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-  height: 80%;
+  height: 50%;
   border-radius: 10px;
   border: 1px solid lime;
 }

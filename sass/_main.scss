@@ -19,7 +19,7 @@
             width: 15%;
             height: 90px;
             &--accueil{
-                width: 40%;
+                width: 45%;
                 a{
                     @include flexAroundCenter;
                     align-self: center;
@@ -27,13 +27,13 @@
                     text-decoration: none;
                     width: 80%;
                     height: 40%;
-                    border: 1px solid black;
+                    border: 2px solid white;
                     border-radius: 8px;
                     background-color: $sand;
                 }   
             }
             &--panier{
-                width: 40%;
+                width: 45%;
                 a{
                     @include flexAroundCenter;
                     align-self: center;
@@ -41,7 +41,7 @@
                     text-decoration: none;
                     width: 80%;
                     height: 40%;
-                    border: 1px solid black;
+                    border: 2px solid white;
                     border-radius: 8px;
                     background-color: $sand;
                 }   
@@ -52,7 +52,6 @@
 .container{
     @include flexAroundCenter;
     background-color: $secondaire;
-    border-radius: 10px;
     flex-direction: column;
     height: 80vh;
     width: 90%;
@@ -61,10 +60,10 @@
     }
     .row{
         @include flexAroundCenter;
-        border-radius: 8px;
+        border-radius: 4px;
         overflow: hidden;
         width: 98%;
-        height: 18%;
+        height: 17%;
         border: 1px solid $primaire;
         background-color: $sand;
         &__left{
@@ -131,6 +130,7 @@ footer{
     @include flexAroundCenter;
     width: 100%;
     height: 100px;
+    color: white;
 }
 
 
@@ -147,7 +147,6 @@ footer{
 .container{
     @include flexAroundCenter;
     background-color: $secondaire;
-    border-radius: 10px;
     flex-direction: column;
     height: 80vh;
     width: 90%;
@@ -156,7 +155,7 @@ footer{
         @include flexAroundCenter;
         height: 80%;
         width: 90%;
-        border-radius: 10px;
+        border-radius: 5px;
         border: 1px solid $primaire;
         background-color: $sand;
         &--left{
@@ -164,7 +163,7 @@ footer{
             width: 48%;
             height: 90%;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 5px;
             img{
                 display: flex;
                 height: 100%;
@@ -174,20 +173,24 @@ footer{
         &--right{
             @include flexAroundCenter;
             flex-direction: column;
-            border: 1px solid red;
+            border: 1px solid $primaire;
+            border-radius: 5px;
             width: 48%;
             height:80%;
             &--nameID{
                 @include flexAroundCenter;
                 flex-direction: column;
                 width: 80%;
-                height:20%;
+                height:15%;
+                h2{
+                    font-size: 12px;
+                }
             }
             &--description{
                 @include flexAroundCenter;
                 border: 1px solid red;
-                width: 80%;
-                height:65%;
+                width: 100%;
+                height:55%;
             }
             .button{
                 border: 2px solid $primaire;
@@ -214,7 +217,6 @@ footer{
 .container{
     @include flexAroundCenter;
     background-color: $secondaire;
-    border-radius: 10px;
     flex-direction: column;
     height: 80vh;
     width: 90%;
@@ -231,19 +233,19 @@ footer{
             width: 30%;
             height: 90%;
             border-radius: 10px;
-            border: 1px solid red;
+            border: 1px solid $primaire;
         }
         &--right{
             @include flexAroundCenter;
             flex-direction: column;
-            width: 70%;
+            width: 60%;
             height: 90%;
             border-radius: 10px;
-            border: 1px solid red;
+            border: 1px solid $primaire;
             .formulaire{
                 @include flexAroundCenter;
                 width: 90%;
-                height: 80%;
+                height: 50%;
                 border-radius: 10px;
                 border: 1px solid rgb(0, 255, 0);
             }
