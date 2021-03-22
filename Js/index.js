@@ -26,6 +26,12 @@ class Panier {
     addItem(teddy){
         this.teddies.push(teddy);
         console.log(this.teddies)
+        console.log("ajouté")
+    }
+    removeItem(teddy){
+        this.teddies.pull(teddy);
+        console.log(this.teddies)
+        console.log("enlevé")
     }
 }
 
@@ -34,3 +40,12 @@ let panier = new Panier (
     []
 );
 
+/* 
+
+1 - Récupérer les articles venant du serveur (cf AJAX)(Page Index).
+2 - Afficher dynamiquement les differents produits sur la page index 
+après les avoir recuperé du serveur (cf Array Javascript, String template multiline).
+3 - Afficher dynamiquement les détails d'un article en recupérant ses données 
+à partir du serveur (cf AJAX,String tamplate mulltilne).
+
+*/
