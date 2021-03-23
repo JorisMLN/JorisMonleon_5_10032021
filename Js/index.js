@@ -1,21 +1,52 @@
+/* Requete Teddies*/
 
-/* class */
-class Teddy {
-    constructor(id, name, price, description, imageUrl){
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.imageUrl = imageUrl;
+let requestTeddies = new XMLHttpRequest();
+requestTeddies.onreadystatechange = function(){
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
+        let response = JSON.parse(this.responseText);
+        console.log(response);
+
+        let htmlString = '';
+        response.forEach((teddy, index) => {
+            htmlString += `
+
+            <div class="row">
+                <div class="row__left">
+                    <img src="${teddy.imageUrl}" alt="ours en peluche">
+                </div>
+                <div class="row__mid">
+                    <div class="title">
+                    <div class="title__name" id="teddy${index}">
+                        ${teddy.name}
+                    </div>
+                        <div class="title__id">
+                            ${teddy._id}
+                        </div>
+
+                    </div>
+                    <div class="row__mid__description">
+                        ${teddy.description}
+                    </div>
+                </div>
+                <div class="row__right">
+                    <div class="row__right__price">
+                        ${teddy.price}
+                    </div>
+                    <a href="teddy1Hubert.html"  class="button">
+                        Voir l'article
+                    </a>
+                </div>
+            </div>
+            `
+        });
+        let teddyList = document.getElementById('teddyList');
+        teddyList.innerHTML = htmlString;
     }
-}
+};
+requestTeddies.open("GET", "http://localhost:3000/api/teddies");
+requestTeddies.send();
 
-/* Instance de class */
-let teddyHubert = new Teddy (001, "Hubert", 33, "Le meilleur des Amis", URL="images/teddy_1.jpg");
-let teddyMartin = new Teddy (002, "Martin", 29, "Le compagnon idéal", URL="images/teddy_2.jpg");
-let teddyLouis = new Teddy (003, "Louis", 45, "Double de calin", URL="images/teddy_3.jpg");
-let teddyGeorge = new Teddy (004, "George", 30, "Le pote d'enfance", URL="images/teddy_4.jpg");
-let teddyMarcel = new Teddy (005, "Marcel", 25, "Le meilleur doudou", URL="images/teddy_5.jpg");
+
 
 /* Ajout et suppression d'item */
 class Panier {
@@ -35,10 +66,12 @@ class Panier {
     }
 }
 
-let panier = new Panier (
-    'John Doe',
-    []
-);
+/* Panier */
+// let panier = new Panier (
+//     'John Doe',
+//     []
+// );
+
 
 /* 
 

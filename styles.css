@@ -105,15 +105,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 80vh;
   width: 90%;
 }
 
-.container img {
-  overflow: hidden;
+.container .blockTeddyList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 98%;
 }
 
-.container .row {
+.container .blockTeddyList .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,18 +136,18 @@
   border-radius: 4px;
   overflow: hidden;
   width: 98%;
-  height: 17%;
+  height: 20%;
   border: 1px solid #132B40;
   background-color: #BBE8F2;
 }
 
-.container .row__left {
+.container .blockTeddyList .row__left {
   height: 99%;
   width: 25%;
   overflow: hidden;
 }
 
-.container .row__left img {
+.container .blockTeddyList .row__left img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,13 +159,13 @@
   width: 100%;
 }
 
-.container .row__mid {
+.container .blockTeddyList .row__mid {
   height: 99%;
   width: 55%;
   overflow: hidden;
 }
 
-.container .row__mid .title {
+.container .blockTeddyList .row__mid .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,17 +182,17 @@
   height: 20%;
 }
 
-.container .row__mid .title__name {
+.container .blockTeddyList .row__mid .title__name {
   width: 49%;
   height: 99%;
 }
 
-.container .row__mid .title__id {
+.container .blockTeddyList .row__mid .title__id {
   width: 49%;
   height: 99%;
 }
 
-.container .row__mid__description {
+.container .blockTeddyList .row__mid__description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,7 +204,7 @@
   height: 79%;
 }
 
-.container .row__right {
+.container .blockTeddyList .row__right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,7 +222,7 @@
   overflow: hidden;
 }
 
-.container .row__right__price {
+.container .blockTeddyList .row__right__price {
   border: 2px solid #4A738C;
   border-radius: 10px;
   width: 30%;
@@ -226,7 +237,7 @@
           align-items: center;
 }
 
-.container .row__right .button {
+.container .blockTeddyList .row__right .button {
   border: 2px solid #132B40;
   border-radius: 10px;
   width: 80%;
@@ -241,7 +252,7 @@
           align-items: center;
 }
 
-.container .row__right a {
+.container .blockTeddyList .row__right a {
   color: black;
   text-decoration: none;
 }

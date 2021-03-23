@@ -53,78 +53,149 @@
     @include flexAroundCenter;
     background-color: $secondaire;
     flex-direction: column;
-    height: 80vh;
     width: 90%;
-    img{
-        overflow: hidden;
-    }
-    .row{
+    .blockTeddyList{
         @include flexAroundCenter;
-        border-radius: 4px;
-        overflow: hidden;
-        width: 98%;
-        height: 17%;
-        border: 1px solid $primaire;
-        background-color: $sand;
-        &__left{
-            height: 99%;
-            width: 25%;
-            overflow: hidden;
-            img{
-                @include flexAroundCenter;
-                width: 100%;
-            }
-        }
-        &__mid{
-            height: 99%;
-            width: 55%;
-            overflow: hidden;
-            .title{
-                @include flexAroundCenter;
-                flex-direction: row;
-                width: 100%;
-                height: 20%;
-                &__name{
-                    width: 49%;
-                    height: 99%;
-                }
-                &__id{
-                    width: 49%;
-                    height: 99%;
-                }
-            }
-            &__description{
-                @include flexAroundCenter;
-                height: 79%;
-            }
-        }
-        &__right{
+        flex-direction: column;
+        height: 98%;
+        .row{
             @include flexAroundCenter;
-            flex-direction: column;
-            height: 99%;
-            width: 20%;
+            border-radius: 4px;
             overflow: hidden;
-            &__price{
-                border: 2px solid $tertiaire;
-                border-radius: 10px;
-                width: 30%;
-                height: 30%;
+            width: 98%;
+            height: 20%;
+            border: 1px solid $primaire;
+            background-color: $sand;
+            &__left{
+                height: 99%;
+                width: 25%;
+                overflow: hidden;
+                img{
+                    @include flexAroundCenter;
+                    width: 100%;
+                }
+            }
+            &__mid{
+                height: 99%;
+                width: 55%;
+                overflow: hidden;
+                .title{
+                    @include flexAroundCenter;
+                    flex-direction: row;
+                    width: 100%;
+                    height: 20%;
+                    &__name{
+                        width: 49%;
+                        height: 99%;
+                    }
+                    &__id{
+                        width: 49%;
+                        height: 99%;
+                    }
+                }
+                &__description{
+                    @include flexAroundCenter;
+                    height: 79%;
+                }
+            }
+            &__right{
                 @include flexAroundCenter;
+                flex-direction: column;
+                height: 99%;
+                width: 20%;
+                overflow: hidden;
+                &__price{
+                    border: 2px solid $tertiaire;
+                    border-radius: 10px;
+                    width: 30%;
+                    height: 30%;
+                    @include flexAroundCenter;
+                }
+                .button{
+                    border: 2px solid $primaire;
+                    border-radius: 10px;
+                    width: 80%;
+                    height: 40%;
+                    @include flexAroundCenter;
+                }
+                a{
+                    color: black;
+                    text-decoration: none;
+                }
+                
             }
-            .button{
-                border: 2px solid $primaire;
-                border-radius: 10px;
-                width: 80%;
-                height: 40%;
-                @include flexAroundCenter;
-            }
-            a{
-                color: black;
-                text-decoration: none;
-            }
-            
         }
     }
+    // img{
+    //     overflow: hidden;
+    // }
+    // .row{
+    //     @include flexAroundCenter;
+    //     border-radius: 4px;
+    //     overflow: hidden;
+    //     width: 98%;
+    //     height: 14%;
+    //     border: 1px solid $primaire;
+    //     background-color: $sand;
+    //     &__left{
+    //         height: 99%;
+    //         width: 25%;
+    //         overflow: hidden;
+    //         img{
+    //             @include flexAroundCenter;
+    //             width: 100%;
+    //         }
+    //     }
+    //     &__mid{
+    //         height: 99%;
+    //         width: 55%;
+    //         overflow: hidden;
+    //         .title{
+    //             @include flexAroundCenter;
+    //             flex-direction: row;
+    //             width: 100%;
+    //             height: 20%;
+    //             &__name{
+    //                 width: 49%;
+    //                 height: 99%;
+    //             }
+    //             &__id{
+    //                 width: 49%;
+    //                 height: 99%;
+    //             }
+    //         }
+    //         &__description{
+    //             @include flexAroundCenter;
+    //             height: 79%;
+    //         }
+    //     }
+    //     &__right{
+    //         @include flexAroundCenter;
+    //         flex-direction: column;
+    //         height: 99%;
+    //         width: 20%;
+    //         overflow: hidden;
+    //         &__price{
+    //             border: 2px solid $tertiaire;
+    //             border-radius: 10px;
+    //             width: 30%;
+    //             height: 30%;
+    //             @include flexAroundCenter;
+    //         }
+    //         .button{
+    //             border: 2px solid $primaire;
+    //             border-radius: 10px;
+    //             width: 80%;
+    //             height: 40%;
+    //             @include flexAroundCenter;
+    //         }
+    //         a{
+    //             color: black;
+    //             text-decoration: none;
+    //         }
+            
+    //     }
+    // }
 }
 footer{
     @include flexAroundCenter;
