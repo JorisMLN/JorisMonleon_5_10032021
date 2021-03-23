@@ -1,4 +1,4 @@
 
-let teddyHubert_json = sessionStorage.getItem("teddy");
-let tedHubert = JSON.parse(teddyHubert_json);
-console.log(teddyHubert);
+let teddy_json = sessionStorage.getItem("teddy");
+let tedInfo = JSON.parse(teddy_json);
+console.log(teddy);
