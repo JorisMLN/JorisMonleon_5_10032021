@@ -44,8 +44,8 @@ requestTeddies.onreadystatechange = function(){
         let teddyList = document.getElementById('teddyList'); 
         teddyList.innerHTML = htmlString; 
 
-        /* Boucle pour récupérer la bonne donné afin d'envoyer dans le sessionStorage le bon teddy.
-        Afin de creer la bonne page*/
+        /* Boucle pour récupérer la bonne donné afin d'envoyer dans 
+        le sessionStorage le bon teddy afin de creer la bonne page*/
         response.forEach((teddy, index) => {
             let btnTeddy = document.getElementById(`teddy${index}`);
             btnTeddy.addEventListener('click', function(){

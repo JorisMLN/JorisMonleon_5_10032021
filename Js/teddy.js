@@ -21,7 +21,7 @@ htmlString = `
         <p> ${teddy.description} </p>
     </div>
     <div class="teddy__page--right--bottom">
-        <div>
+        <div>-
             <label> Couleur </label>
             <select name="couleur" id="teddyColors">
         
@@ -45,11 +45,37 @@ teddy.colors.forEach((colors) => {
 let teddyColors = document.getElementById('teddyColors'); 
 teddyColors.innerHTML = colorString; 
 
+/* Ajout et suppression d'item */
+class Panier {
+    constructor(owner, teddies){
+        this.owner = owner;
+        this.teddies = teddies;
+    }
+    addItem(teddy){
+        this.teddies.push(teddy);
+        console.log(this.teddies)
+        console.log("ajouté")
+    }
+    removeItem(teddy){
+        this.teddies.pull(teddy);
+        console.log(this.teddies)
+        console.log("enlevé")
+    }
+}
+
+/* Panier */
+let panier = new Panier (
+    'John Doe',
+    []
+);
+
 /* SessionStorage vers le panier */
 let btnToCommand = document.getElementById('buttonTeddy');
 btnToCommand.addEventListener('click', function(){
+
     let teddyCommand_json = JSON.stringify(teddy);
     console.log(teddyCommand_json);
+    
     sessionStorage.setItem("teddyCommand", teddyCommand_json);
     console.log(sessionStorage);
 });
