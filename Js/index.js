@@ -7,7 +7,8 @@ requestTeddies.onreadystatechange = function(){
         let response = JSON.parse(this.responseText);
         console.log(response);
 
-        let htmlString = ''; /* Boucle ForEach pour créer dynamiquement la liste de Teddy */
+        /* HtmlString + Boucle ForEach pour créer dynamiquement la liste de Teddy */
+        let htmlString = ''; 
         response.forEach((teddy, index) => {
             htmlString += `
 
@@ -18,7 +19,7 @@ requestTeddies.onreadystatechange = function(){
                 <div class="row__mid">
                     <div class="title">
                     <div class="title__name">
-                        ${teddy.name}b
+                        ${teddy.name}
                     </div>
                         <div class="title__id">
                             ${teddy._id}
@@ -39,17 +40,19 @@ requestTeddies.onreadystatechange = function(){
             </div>
             `
         });
+        /* Variable de la Div qui accueille le tableau */
         let teddyList = document.getElementById('teddyList'); 
-        teddyList.innerHTML = htmlString; /* Résultat vers la Div qui accueille le tableau */
+        teddyList.innerHTML = htmlString; 
 
         /* Boucle pour récupérer la bonne donné afin d'envoyer dans le sessionStorage le bon teddy.
         Afin de creer la bonne page*/
         response.forEach((teddy, index) => {
             let btnTeddy = document.getElementById(`teddy${index}`);
             btnTeddy.addEventListener('click', function(){
-            let teddy_json = JSON.stringify(teddy);
-            console.log(teddy_json);
-            sessionStorage.setItem("teddies", teddy_json);
+                let teddy_json = JSON.stringify(teddy);
+                console.log(teddy_json);
+                sessionStorage.setItem("teddies", teddy_json);
+                console.log(sessionStorage);
             });
         });  
     }
@@ -60,36 +63,12 @@ requestTeddies.send();
 
 
 
-/* Ajout et suppression d'item */
-class Panier {
-    constructor(owner, teddies){
-        this.owner = owner;
-        this.teddies = teddies;
-    }
-    addItem(teddy){
-        this.teddies.push(teddy);
-        console.log(this.teddies)
-        console.log("ajouté")
-    }
-    removeItem(teddy){
-        this.teddies.pull(teddy);
-        console.log(this.teddies)
-        console.log("enlevé")
-    }
-}
-
-/* Panier */
-// let panier = new Panier (
-//     'John Doe',
-//     []
-// );
-
 /* 
 
 [CHECK] 1 - Récupérer les articles venant du serveur (cf AJAX)(Page Index). [CHECK]
 [CHECK] 2 - Afficher dynamiquement les differents produits sur la page index 
         après les avoir recuperé du serveur (cf Array Javascript, String template multiline).
-3 - Afficher dynamiquement les détails d'un article en recupérant ses données 
+[CHECK] 3 - Afficher dynamiquement les détails d'un article en recupérant ses données 
 à partir du serveur (cf AJAX,String tamplate mulltilne).
 
 */
