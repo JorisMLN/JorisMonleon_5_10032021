@@ -73,9 +73,9 @@ let panier = new Panier (
 let btnToCommand = document.getElementById('buttonTeddy');
 btnToCommand.addEventListener('click', function(){
 
-    let teddyCommand_json = JSON.stringify(teddy);
-    console.log(teddyCommand_json);
-    
+    panier.addItem(teddy);
+
+    let teddyCommand_json = JSON.stringify(panier);
     sessionStorage.setItem("teddyCommand", teddyCommand_json);
     console.log(sessionStorage);
 });
