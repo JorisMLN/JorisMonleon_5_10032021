@@ -45,37 +45,18 @@ teddy.colors.forEach((colors) => {
 let teddyColors = document.getElementById('teddyColors'); 
 teddyColors.innerHTML = colorString; 
 
-/* Ajout et suppression d'item */
-class Panier {
-    constructor(owner, teddies){
-        this.owner = owner;
-        this.teddies = teddies;
-    }
-    addItem(teddy){
-        this.teddies.push(teddy);
-        console.log(this.teddies)
-        console.log("ajouté")
-    }
-    removeItem(teddy){
-        this.teddies.pull(teddy);
-        console.log(this.teddies)
-        console.log("enlevé")
-    }
-}
 
-/* Panier */
-let panier = new Panier (
-    'John Doe',
-    []
-);
-
-/* SessionStorage vers le panier */
+/* LocalStorage vers le panier */
+let tedArray = [];
 let btnToCommand = document.getElementById('buttonTeddy');
 btnToCommand.addEventListener('click', function(){
 
-    panier.addItem(teddy);
+    tedArray.push(teddy);
 
-    let teddyCommand_json = JSON.stringify(panier);
-    sessionStorage.setItem("teddyCommand", teddyCommand_json);
-    console.log(sessionStorage);
+    let teddyCommand_json = JSON.stringify(tedArray);
+    localStorage.setItem("teddyCommand", teddyCommand_json);
+    console.log(localStorage);
 });
+
+let teddyCommand_json = localStorage.getItem("teddyCommand");
+console.log(localStorage);

@@ -60,9 +60,8 @@ requestTeddies.onreadystatechange = function(){
 requestTeddies.open("GET", "http://localhost:3000/api/teddies");
 requestTeddies.send();
 
-
-
-
+let teddyCommand_json = localStorage.getItem("teddyCommand");
+console.log(localStorage);
 /* 
 
 [CHECK] 1 - Récupérer les articles venant du serveur (cf AJAX)(Page Index). [CHECK]

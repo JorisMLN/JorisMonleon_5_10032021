@@ -1,18 +1,15 @@
 /*  */
 
-let teddyCommand_json = sessionStorage.getItem("teddyCommand");
-console.log(sessionStorage);
+let teddyCommand_json = localStorage.getItem("teddyCommand");
+console.log(localStorage);
 
 let teddyCommand = JSON.parse(teddyCommand_json);
 console.log(teddyCommand);
 
-let teddiesArray = teddyCommand.teddies;
-console.log(teddiesArray);
-
 
 /* HtmlString + Boucle ForEach pour créer dynamiquement le récapitulatif de commande */
 let htmlString = ''; 
-teddiesArray.forEach((teddy, index) => {
+teddyCommand.forEach((teddy) => {
     htmlString += `
 
     <div class="recapPanier__teddy">
@@ -50,3 +47,30 @@ let btnTeddyRemove = document.getElementById("teddyRemove");
 btnTeddyRemove.addEventListener('click', function(){
     panier.removeItem(this.teddy);
 });
+
+
+
+
+// /* Ajout et suppression d'item */
+// class Panier {
+//     constructor(owner, teddies){
+//         this.owner = owner;
+//         this.teddies = teddies;
+//     }
+//     addItem(teddy){
+//         this.teddies.push(teddy);
+//         console.log(this.teddies)
+//         console.log("ajouté")
+//     }
+//     removeItem(teddy){
+//         this.teddies.pull(teddy);
+//         console.log(this.teddies)
+//         console.log("enlevé")
+//     }
+// }
+
+// /* Panier */
+// let panier = new Panier (
+//     'John Doe',
+//     []
+// );
