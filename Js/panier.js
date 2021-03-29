@@ -1,7 +1,7 @@
 /*  */
 
-let teddyCommand_json = localStorage.getItem("teddyCommand");
-console.log(localStorage);
+let teddyCommand_json = sessionStorage.getItem("teddyCommand");
+console.log(sessionStorage);
 
 let teddyCommand = JSON.parse(teddyCommand_json);
 console.log(teddyCommand);
@@ -13,9 +13,11 @@ teddyCommand.forEach((teddy) => {
     htmlString += `
 
     <div class="recapPanier__teddy">
+
         <div class="recapPanier__teddy__left">
             <img src="${teddy.imageUrl}" alt="ours en peluche">
         </div>
+
         <div class="recapPanier__teddy__mid">
             <div class="title">
                 <div class="title__name">
@@ -26,14 +28,14 @@ teddyCommand.forEach((teddy) => {
                 </div>
             </div>
         </div>
-        <div class="recapPanier__right">
-            <div class="row__right__price">
+
+        <div class="recapPanier__teddy__right">
+            <div class="recapPanier__right__price">
                 ${teddy.price}
             </div>
-            <a class="button" id="teddyRemove">
-                X
-            </a>
+            <a id="teddyRemove"> X </a>
         </div>
+
     </div>
     `
 });
@@ -45,7 +47,7 @@ teddyListCommand.innerHTML = htmlString;
 /* Button pour Remove un article du panier */
 let btnTeddyRemove = document.getElementById("teddyRemove");
 btnTeddyRemove.addEventListener('click', function(){
-    panier.removeItem(this.teddy);
+    [].removeItem(this.teddy);
 });
 
 

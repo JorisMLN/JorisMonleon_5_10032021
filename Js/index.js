@@ -1,5 +1,10 @@
 /*  */
 
+// let locStorage = localStorage;
+// locStorage.clear();
+// let sesStorage = sessionStorage;
+// sesStorage.clear();
+
 /* Requete WEB pour avoir les tableaux des teddies*/
 let requestTeddies = new XMLHttpRequest();
 requestTeddies.onreadystatechange = function(){
@@ -60,8 +65,8 @@ requestTeddies.onreadystatechange = function(){
 requestTeddies.open("GET", "http://localhost:3000/api/teddies");
 requestTeddies.send();
 
-let teddyCommand_json = localStorage.getItem("teddyCommand");
-console.log(localStorage);
+let teddyCommand_json = sessionStorage.getItem("teddyCommand");
+console.log(sessionStorage);
 /* 
 
 [CHECK] 1 - Récupérer les articles venant du serveur (cf AJAX)(Page Index). [CHECK]

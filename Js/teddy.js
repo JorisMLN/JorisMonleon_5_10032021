@@ -50,13 +50,11 @@ teddyColors.innerHTML = colorString;
 let tedArray = [];
 let btnToCommand = document.getElementById('buttonTeddy');
 btnToCommand.addEventListener('click', function(){
-
     tedArray.push(teddy);
-
     let teddyCommand_json = JSON.stringify(tedArray);
-    localStorage.setItem("teddyCommand", teddyCommand_json);
-    console.log(localStorage);
+    sessionStorage.setItem("teddyCommand", teddyCommand_json);
+    console.log(sessionStorage);
 });
 
-let teddyCommand_json = localStorage.getItem("teddyCommand");
-console.log(localStorage);
+let teddyCommand_json = sessionStorage.getItem("teddyCommand");
+console.log(sessionStorage);
