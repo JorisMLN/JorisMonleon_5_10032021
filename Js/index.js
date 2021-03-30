@@ -38,7 +38,7 @@ requestTeddies.onreadystatechange = function(){
                     <div class="row__right__price">
                         ${teddy.price}
                     </div>
-                    <a href="teddy.html" class="button" id="teddy${index}">
+                    <a href="teddy.html?id=${teddy._id}" class="button" id="teddy${index}">
                         Voir l'article
                     </a>
                 </div>
@@ -51,15 +51,15 @@ requestTeddies.onreadystatechange = function(){
 
         /* Boucle pour récupérer la bonne donné afin d'envoyer dans 
         le sessionStorage le bon teddy afin de creer la bonne page*/
-        response.forEach((teddy, index) => {
-            let btnTeddy = document.getElementById(`teddy${index}`);
-            btnTeddy.addEventListener('click', function(){
-                let teddy_json = JSON.stringify(teddy);
-                console.log(teddy_json);
-                sessionStorage.setItem("teddies", teddy_json);
-                console.log(sessionStorage);
-            });
-        });  
+        // response.forEach((teddy, index) => {
+        //     let btnTeddy = document.getElementById(`teddy${index}`);
+        //     btnTeddy.addEventListener('click', function(){
+        //         let teddy_json = JSON.stringify(teddy);
+        //         console.log(teddy_json);
+        //         sessionStorage.setItem("teddies", teddy_json);
+        //         console.log(sessionStorage);
+        //     });
+        // });  
     }
 };
 requestTeddies.open("GET", "http://localhost:3000/api/teddies");
@@ -74,6 +74,9 @@ console.log(sessionStorage);
         après les avoir recuperé du serveur (cf Array Javascript, String template multiline).
 [CHECK] 3 - Afficher dynamiquement les détails d'un article en recupérant ses données 
 à partir du serveur (cf AJAX,String tamplate mulltilne).
+
+
+1 - Get value of get parameter in JS
 
 */
  

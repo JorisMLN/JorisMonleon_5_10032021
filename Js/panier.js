@@ -54,25 +54,25 @@ btnTeddyRemove.addEventListener('click', function(){
 
 
 // /* Ajout et suppression d'item */
-// class Panier {
-//     constructor(owner, teddies){
-//         this.owner = owner;
-//         this.teddies = teddies;
-//     }
-//     addItem(teddy){
-//         this.teddies.push(teddy);
-//         console.log(this.teddies)
-//         console.log("ajouté")
-//     }
-//     removeItem(teddy){
-//         this.teddies.pull(teddy);
-//         console.log(this.teddies)
-//         console.log("enlevé")
-//     }
-// }
+class Panier {
+    constructor(owner, teddies){
+        this.owner = owner;
+        this.teddies = teddies;
+    }
+    addItem(teddy){
+        this.teddies.push(teddy);
+        console.log(this.teddies)
+        console.log("ajouté")
+    }
+    removeItem(teddy){
+        this.teddies.pull(teddy);
+        console.log(this.teddies)
+        console.log("enlevé")
+    }
+}
 
 // /* Panier */
-// let panier = new Panier (
-//     'John Doe',
-//     []
-// );
+let panier = new Panier (
+    'John Doe',
+    []
+);
