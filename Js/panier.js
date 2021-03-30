@@ -1,5 +1,8 @@
-/*  */
 
+/* ---------------- P A N I E R ---------------- */
+
+
+/* Récupération des données du panier dans le sessionStorage */
 let teddyCommand_json = sessionStorage.getItem("teddyCommand");
 console.log(sessionStorage);
 

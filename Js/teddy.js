@@ -1,9 +1,9 @@
-/*  */
+
+/* ---------------- T E D D Y ---------------- */
 
 
 /* Récupération des paramètres dans l'URL */ /* exemple: ?id=5be9c8541c9d440000665243 */
 let teddyParameters = window.location.search;
-console.log(teddyParameters); 
 let teddyApiParameters = teddyParameters.substr(4);
 console.log(teddyApiParameters); 
 
@@ -57,8 +57,59 @@ requestTeddy.open("GET", `http://localhost:3000/api/teddies/${teddyApiParameters
 requestTeddy.send();
 
 
-/* LocalStorage vers le panier */
-// let tedArray = [];
+
+/* ---------------- P A N I E R ---------------- */
+
+/* Ecoute du click d'ajout au panier */
+let btnToCommand = document.getElementById('buttonTeddy');
+btnToCommand.addEventListener('click', function(){
+    let teddyCommand_json = sessionStorage.getItem("teddyCommand");
+    console.log(teddyCommand_json);
+    cart();
+});
+
+/* Function de gestion du panier pour le sessionStorage */
+function cart() {
+    if (teddyCommand == false){
+        let panier = new Panier ('John Doe', []);
+        panier.addItem(this.teddy);
+        teddyCommand_json = sessionStorage.setItem("teddyCommand");
+    } else {
+        cartAlready();
+    }
+};
+
+function cartAlready() {
+    if (this.teddy == false){
+        this.panier.addItem(this.teddy);
+    } else {
+        this.teddy ++;
+    }
+};
+
+/* Class pour le panier */
+class Panier {
+    constructor(owner, teddies){
+        this.owner = owner;
+        this.teddies = teddies;
+    }
+    addItem(teddy){
+        this.teddies.push(teddy);
+        console.log(this.teddies)
+        console.log("ajouté")
+    }
+    removeItem(teddy){
+        this.teddies.pull(teddy);
+        console.log(this.teddies)
+        console.log("enlevé")
+    }
+}
+
+
+
+
+/* LocalStorage vers la page "panier" */
+
 // let btnToCommand = document.getElementById('buttonTeddy');
 // btnToCommand.addEventListener('click', function(){
 //     tedArray.push(teddy);

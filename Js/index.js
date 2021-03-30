@@ -1,9 +1,6 @@
-/*  */
 
-// let locStorage = localStorage;
-// locStorage.clear();
-// let sesStorage = sessionStorage;
-// sesStorage.clear();
+/* ---------------- T E D D I E S ---------------- */
+
 
 /* Requete WEB pour avoir les tableaux des teddies*/
 let requestTeddies = new XMLHttpRequest();
@@ -48,35 +45,23 @@ requestTeddies.onreadystatechange = function(){
         /* Variable de la Div qui accueille le tableau */
         let teddyList = document.getElementById('teddyList'); 
         teddyList.innerHTML = htmlString; 
-
-        /* Boucle pour récupérer la bonne donné afin d'envoyer dans 
-        le sessionStorage le bon teddy afin de creer la bonne page*/
-        // response.forEach((teddy, index) => {
-        //     let btnTeddy = document.getElementById(`teddy${index}`);
-        //     btnTeddy.addEventListener('click', function(){
-        //         let teddy_json = JSON.stringify(teddy);
-        //         console.log(teddy_json);
-        //         sessionStorage.setItem("teddies", teddy_json);
-        //         console.log(sessionStorage);
-        //     });
-        // });  
     }
 };
 requestTeddies.open("GET", "http://localhost:3000/api/teddies");
 requestTeddies.send();
 
-let teddyCommand_json = sessionStorage.getItem("teddyCommand");
-console.log(sessionStorage);
-/* 
 
+
+/* ---------------- C H E C K L I S T ---------------- */
+
+
+
+/* 
 [CHECK] 1 - Récupérer les articles venant du serveur (cf AJAX)(Page Index). [CHECK]
 [CHECK] 2 - Afficher dynamiquement les differents produits sur la page index 
         après les avoir recuperé du serveur (cf Array Javascript, String template multiline).
 [CHECK] 3 - Afficher dynamiquement les détails d'un article en recupérant ses données 
-à partir du serveur (cf AJAX,String tamplate mulltilne).
-
-
-1 - Get value of get parameter in JS
-
+        à partir du serveur (cf AJAX,String tamplate mulltilne).
+[CHECK] 4 - Get value of get parameter in JS
 */
  
