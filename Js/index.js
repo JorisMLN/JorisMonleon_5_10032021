@@ -11,7 +11,7 @@ requestTeddies.onreadystatechange = function(){
 
         /* HtmlString + Boucle ForEach pour créer dynamiquement la liste de Teddy */
         let htmlString = ''; 
-        response.forEach((teddy, index) => {
+        response.forEach((teddy) => {
             htmlString += `
 
             <div class="row">
@@ -35,7 +35,7 @@ requestTeddies.onreadystatechange = function(){
                     <div class="row__right__price">
                         ${teddy.price}
                     </div>
-                    <a href="teddy.html?id=${teddy._id}" class="button" id="teddy${index}">
+                    <a href="teddy.html?id=${teddy._id}" class="button">
                         Voir l'article
                     </a>
                 </div>
