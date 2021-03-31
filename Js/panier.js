@@ -3,16 +3,14 @@
 
 
 /* Récupération des données du panier dans le sessionStorage */
-let teddyCommand_json = sessionStorage.getItem("teddyCommand");
+let teddyCommand_json = sessionStorage.getItem("teddies");
 console.log(sessionStorage);
-
 let teddyCommand = JSON.parse(teddyCommand_json);
 console.log(teddyCommand);
 
-
 /* HtmlString + Boucle ForEach pour créer dynamiquement le récapitulatif de commande */
 let htmlString = ''; 
-teddyCommand.forEach((teddy) => {
+teddyCommand.teddies.forEach((teddy) => {
     htmlString += `
 
     <div class="recapPanier__teddy">
@@ -25,7 +23,10 @@ teddyCommand.forEach((teddy) => {
             <div class="title">
                 <div class="title__name">
                     ${teddy.name}
-                 </div>
+                </div>
+                <div class="incrementation">
+                   x12
+                </div>
                 <div class="title__id">
                     ${teddy._id}
                 </div>
@@ -36,7 +37,7 @@ teddyCommand.forEach((teddy) => {
             <div class="recapPanier__right__price">
                 ${teddy.price}
             </div>
-            <a id="teddyRemove"> X </a>
+            <a class="teddyRemove"> X </a>
         </div>
 
     </div>
@@ -46,36 +47,22 @@ teddyCommand.forEach((teddy) => {
 let teddyListCommand = document.getElementById('recapPanier'); 
 teddyListCommand.innerHTML = htmlString;
 
+/* Boucle ForEach pour le calcul du total */
+
+let totalPrice = 0;
+teddyCommand.teddies.forEach((teddy) => {
+    totalPrice += (teddy.price);
+});
+let totalPriceString = `Total de la commande: ${totalPrice} €`;
+
+let priceCommand = document.getElementById("priceCommand");
+priceCommand.innerHTML = `${totalPriceString}`;
+
+
 
 /* Button pour Remove un article du panier */
-let btnTeddyRemove = document.getElementById("teddyRemove");
-btnTeddyRemove.addEventListener('click', function(){
-    [].removeItem(this.teddy);
-});
-
-
-
-
-// /* Ajout et suppression d'item */
-class Panier {
-    constructor(owner, teddies){
-        this.owner = owner;
-        this.teddies = teddies;
-    }
-    addItem(teddy){
-        this.teddies.push(teddy);
-        console.log(this.teddies)
-        console.log("ajouté")
-    }
-    removeItem(teddy){
-        this.teddies.pull(teddy);
-        console.log(this.teddies)
-        console.log("enlevé")
-    }
-}
-
-// /* Panier */
-let panier = new Panier (
-    'John Doe',
-    []
-);
+// let btnTeddyRemove = document.getElementsByClassName("teddyRemove");
+// btnTeddyRemove.addEventListener('click', function(){
+//     teddyCommand.teddies
+//     .removeItem(this.teddy);
+// });

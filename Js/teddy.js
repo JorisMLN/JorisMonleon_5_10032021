@@ -93,17 +93,14 @@ function cart(teddy) {
     console.log(sessionStorage);
 };
 
-
-function cartAlready(teddy) {
-    let panier_json = sessionStorage.getItem("teddies");
-    if (teddy == false){
-        this.panier.addItem(this.teddy);
-    } else {
-        this.teddy ++;
-    }
-};
-
-
+// function cartAlready(teddy) {
+//     let panier_json = sessionStorage.getItem("teddies");
+//     if (teddy == false){
+//         this.panier.addItem(this.teddy);
+//     } else {
+//         this.teddy ++;
+//     }
+// };
 
 /* Class pour le panier */
 class Panier {
