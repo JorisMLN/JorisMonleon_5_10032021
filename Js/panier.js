@@ -1,5 +1,6 @@
 
-/* ---------------- P A N I E R ---------------- */
+/* ---------------- P A G E - P A N I E R ---------------- */
+
 
 
 /* Récupération des données du panier dans le sessionStorage */
@@ -36,7 +37,7 @@ function getPanierTemplate(teddy){
                             ${teddy.name}
                         </div>
                         <div class="incrementation">
-                        x12
+                        x1
                         </div>
                         <div class="title__id">
                             ${teddy._id}

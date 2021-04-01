@@ -1,5 +1,7 @@
+// import Panier from './panierClass';
 
-/* ---------------- T E D D Y ---------------- */
+/* ---------------- P A G E - T E D D Y ---------------- */
+
 
 
 /* Récupération des paramètres dans l'URL */ /* exemple: ?id=5be9c8541c9d440000665243 */
@@ -67,15 +69,19 @@ function setColorsOptions(teddy){
         teddyColors.innerHTML = colorString;
 }
 
+
+
+/* ---------------- P A N I E R ---------------- */
+
+
+
+/* Ecoute du click sur le bouton d'ajout du Teddy */
 function addTeddyToCart(teddy){
     let btnToCommand = document.getElementById('buttonTeddy');
     btnToCommand.addEventListener('click', function(){
-        console.log(sessionStorage);
         cart(teddy);
     });
 }
-
-/* ---------------- P A N I E R ---------------- */
 
 
 /* Function de gestion du panier pour le sessionStorage */
@@ -83,6 +89,7 @@ function cart(teddy) {
     let panier;
     if (sessionStorage.teddies === undefined || sessionStorage.teddies === null){ /*(!sessionsStorage.teddies)*/
         panier = new Panier ('John Doe', []);
+        // panier = new Panier ('John Doe', {});
     } else {
         let panier_json = sessionStorage.getItem("teddies");
         panier = Object.assign(new Panier, JSON.parse(panier_json));
@@ -90,18 +97,12 @@ function cart(teddy) {
     panier.addItem(teddy);
     sessionStorage.setItem("teddies", JSON.stringify(panier));
     console.log(sessionStorage);
+    teddyManagement(teddy);
 };
 
-// function cartAlready(teddy) {
-//     let panier_json = sessionStorage.getItem("teddies");
-//     if (teddy == false){
-//         this.panier.addItem(this.teddy);
-//     } else {
-//         this.teddy ++;
-//     }
-// };
 
-/* Class pour le panier */
+
+// /* Class pour le panier */
 class Panier {
     constructor(owner, teddies){
         this.owner = owner;
@@ -116,3 +117,5 @@ class Panier {
         console.log("enlevé")
     }
 }
+
+
