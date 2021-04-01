@@ -57,7 +57,6 @@ function getArticleTemplate(teddy){
 }
 
 function setColorsOptions(teddy){
-    console.log(teddy.colors);
         let colorString = '';
         teddy.colors.forEach((colors) => {
                 colorString += `
@@ -110,28 +109,10 @@ class Panier {
     }
     addItem(teddy){
         this.teddies.push(teddy);
-        console.log(this.teddies)
         console.log("ajouté")
     }
     removeItem(teddy){
         this.teddies.pull(teddy);
-        console.log(this.teddies)
         console.log("enlevé")
     }
 }
-
-
-
-
-/* LocalStorage vers la page "panier" */
-
-// let btnToCommand = document.getElementById('buttonTeddy');
-// btnToCommand.addEventListener('click', function(){
-//     tedArray.push(teddy);
-//     let teddyCommand_json = JSON.stringify(tedArray);
-//     sessionStorage.setItem("teddyCommand", teddyCommand_json);
-//     console.log(sessionStorage);
-// });
-
-// let teddyCommand_json = sessionStorage.getItem("teddyCommand");
-// console.log(sessionStorage);

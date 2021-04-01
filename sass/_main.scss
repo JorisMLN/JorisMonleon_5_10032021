@@ -30,6 +30,9 @@
                     border: 2px solid white;
                     border-radius: 8px;
                     background-color: $sand;
+                    &:hover{
+                        background-color: $tertiaire;
+                    }
                 }   
             }
             &--panier{
@@ -44,6 +47,9 @@
                     border: 2px solid white;
                     border-radius: 8px;
                     background-color: $sand;
+                    &:hover{
+                        background-color: $tertiaire;
+                    }
                 }   
             }  
         }
@@ -117,6 +123,9 @@
                     width: 80%;
                     height: 40%;
                     @include flexAroundCenter;
+                    &:hover{
+                        background-color: $tertiaire;
+                    }
                 }
                 a{
                     color: black;
@@ -200,19 +209,21 @@ footer{
                 border-radius: 5px;
                 width: 90%;
                 height: 15%;
-                .button{
+                #buttonTeddy{
+                    @include flexAroundCenter;
                     border: 2px solid $primaire;
                     border-radius: 10px;
                     width: 40%;
                     height: 80%;
-                    @include flexAroundCenter;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $tertiaire;
+                    }
+                    &:active{
+                        background-color: lighten($tertiaire, $amount: 10);
+                    }
                 }
-                a{
-                    color: black;
-                    text-decoration: none;
-                }
-            }
-            
+            } 
         }
     }
 }
@@ -249,7 +260,7 @@ footer{
                 @include flexAroundCenter;
                 border: 1px solid $tertiaire;
                 width: 99%;
-                height: 8%;
+                height: 10%;
                 border-radius: 10px 10px 0px 0px;
                 h2{
                     font-size: 1.2em;
@@ -316,6 +327,7 @@ footer{
                             border-radius: 10px;
                             width: 90%;
                             height: 50%;
+                            cursor: pointer;
                             &:hover{
                                 background-color: orange;
                             }
@@ -326,7 +338,7 @@ footer{
             #priceCommand{
                 @include flexAroundCenter;
                 width: 99%;
-                height: 8%;
+                height: 10%;
                 border-radius: 0px 0px 10px 10px;
                 border: 1px solid $primaire;
             }

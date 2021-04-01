@@ -5,14 +5,14 @@
 /* Récupération des données du panier dans le sessionStorage */
 let teddyCommand_json = sessionStorage.getItem("teddies");
 console.log(sessionStorage);
-let teddyCommand = JSON.parse(teddyCommand_json);
-console.log(teddyCommand);
+let panier = JSON.parse(teddyCommand_json);
+console.log(panier);
 
 /* HtmlString + Boucle ForEach pour créer dynamiquement le récapitulatif de commande */
 let htmlString = '';
 let totalPrice = 0;
-teddyCommand.teddies.forEach((teddy, index) => {
-    htmlString += getPanierTemplate(teddy, index);
+panier.teddies.forEach((teddy) => {
+    htmlString += getPanierTemplate(teddy);
     totalPrice += teddy.price;
 });
 
@@ -56,15 +56,31 @@ function getPanierTemplate(teddy){
 }
 
 /* Button pour Remove un article du panier */
-// let btnTeddyRemove = document.getElementsById(`teddy${index}`);
-
 let btnTeddyRemove = document.getElementsByClassName("teddyRemove");
-Array.from(btnTeddyRemove).forEach((bob) => {
-    bob.addEventListener('click', function(event){
+
+Array.from(btnTeddyRemove).forEach((btnTeddy) => {
+    btnTeddy.addEventListener('click', function(event){
         console.log(event.target.id);
-
-        
-
+        deleteTeddy();
     });
 });
 
+function deleteTeddy(){
+    panier.removeItem(teddy.id);
+}
+
+/* Class pour le panier */
+class Panier {
+    constructor(owner, teddies){
+        this.owner = owner;
+        this.teddies = teddies;
+    }
+    addItem(teddy){
+        this.teddies.push(teddy);
+        console.log("ajouté")
+    }
+    removeItem(teddy){
+        this.teddies.pull(teddy);
+        console.log("enlevé")
+    }
+}
