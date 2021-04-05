@@ -24,7 +24,7 @@ export default class Panier {
 }
 
 
-/* ---------------- 2 D E - P A N I E R ---------------- */
+/* ---------------- 2 N D E - P A N I E R ---------------- */
 
 // export default class Panier {
 //     constructor(owner, teddies){

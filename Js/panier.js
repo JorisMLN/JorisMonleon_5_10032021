@@ -17,25 +17,10 @@ function generatePanier(){
     // let totalPrice = 0;
     for(let teddyId in panier.teddies){
 
-        let requestTeddies = new XMLHttpRequest();
-        requestTeddies.onreadystatechange = function(){
-            if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
-                let teddyResponse = JSON.parse(this.responseText);
-                console.log(teddyResponse);
-
-            }
-        };
-        requestTeddies.open("GET", `http://localhost:3000/api/teddies/${[teddyId]}`);
-        requestTeddies.send();
-
         htmlString += getPanierTemplate(teddyId);
-        // totalPrice += teddy.price;
     };
     let teddyListCommand = document.getElementById('recapPanier'); /* Variable de la Div qui accueille le récapitulatif */
     teddyListCommand.innerHTML = htmlString;
-    // let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
-    // priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
-
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
 }
 
@@ -51,7 +36,7 @@ function getPanierTemplate(teddyId){
                         
                         </div>
                         <div class="incrementation">
-                            ${panier.teddies[teddyId]}
+                           X ${panier.teddies[teddyId]}
                         </div>
                         <div class="title__id">
                             ${teddyId}
@@ -84,7 +69,9 @@ function bindRemoveTeddy(){
 
 
 
-
+ // totalPrice += teddy.price;
+    // let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
+    // priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
 
 
 /* ---------------- 2 N D E - W A Y ---------------- */
@@ -124,24 +111,4 @@ function bindRemoveTeddy(){
 //         console.log(JSON.parse(sessionStorage.panier));
 //         generatePanier();
 //     });
-// }
-
-
-
-/* ---------------- S O L O - D A T A - A P Y ---------------- */
-
-// requestPanierAPI(); /* Requete WEB pour avoir les infos des teddies commandés*/
-// function requestPanierAPI(){
-
-//     for(let teddyId in panier.teddies){
-//         let requestTeddies = new XMLHttpRequest();
-//         requestTeddies.onreadystatechange = function(){
-//             if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
-//                 let response = JSON.parse(this.responseText);
-//                 console.log(response);   
-//             }
-//         };
-//         requestTeddies.open("GET", `http://localhost:3000/api/teddies/${[teddyId]}`);
-//         requestTeddies.send();
-//     }
 // }
