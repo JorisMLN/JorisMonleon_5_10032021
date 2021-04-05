@@ -31,7 +31,7 @@ export default class Panier {
 //         this.owner = owner;
 //         this.teddies = teddies;
 //     }
-//     addItem(teddyId){
+//     addItem(teddy){
 //         if(!this.teddies[teddyId]){
 //             this.teddies[teddyId] = 1;
 //         } else {

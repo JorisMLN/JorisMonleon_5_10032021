@@ -23,9 +23,6 @@ function generatePanier(){
                 let teddyResponse = JSON.parse(this.responseText);
                 console.log(teddyResponse);
 
-                htmlString += getPanierTemplate(teddyResponse);
-                let teddyListCommand = document.getElementById('recapPanier'); /* Variable de la Div qui accueille le récapitulatif */
-                teddyListCommand.innerHTML = htmlString;
             }
         };
         requestTeddies.open("GET", `http://localhost:3000/api/teddies/${[teddyId]}`);
