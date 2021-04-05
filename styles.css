@@ -531,7 +531,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 18%;
+  height: 20%;
   width: 100%;
 }
 
