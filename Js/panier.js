@@ -14,12 +14,15 @@ generatePanier(); /* HtmlString + Boucle ForEach pour créer dynamiquement le r�
 function generatePanier(){
 
     let htmlString = '';
-    // let totalPrice = 0;
+    let totalPrice = 0;
     for(let teddyId in panier.teddies){
         htmlString += getPanierTemplate(teddyId);
+        totalPrice += panier.teddies[teddyId].price * panier.teddies[teddyId].quantity;
     };
     let teddyListCommand = document.getElementById('recapPanier'); /* Variable de la Div qui accueille le récapitulatif */
     teddyListCommand.innerHTML = htmlString;
+    let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
+    priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
 }
 
@@ -35,7 +38,7 @@ function getPanierTemplate(teddyId){
                             ${panier.teddies[teddyId].name}
                         </div>
                         <div class="incrementation">
-                           X ${panier.teddies[teddyId].quantity}
+                           X ${panier.teddies[teddyId].quantity} =
                         </div>
                         <div class="title__id">
                             ${panier.teddies[teddyId]._id}
@@ -44,8 +47,8 @@ function getPanierTemplate(teddyId){
                 </div>
 
                 <div class="recapPanier__teddy__right">
-                    <div class="recapPanier__right__price">
-                        ${panier.teddies[teddyId].price}
+                    <div class="recapPanier__right__price"> 
+                        ${panier.teddies[teddyId].price * panier.teddies[teddyId].quantity} $
                     </div>
                     <a class="teddyRemove" id="${teddyId}"> X </a>
                 </div>
@@ -65,49 +68,3 @@ function bindRemoveTeddy(){
         });
     });
 }
-
-
-
- // totalPrice += teddy.price;
-    // let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
-    // priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
-
-
-/* ---------------- 2 N D E - W A Y ---------------- */
-
-// function getPanierTemplate(teddyResponse){
-//     return `<div class="recapPanier__teddy">
-//                 <div class="recapPanier__teddy__left">
-//                     <img src="${teddyResponse.imageUrl}" alt="ours en peluche">
-//                 </div>
-
-//                 <div class="recapPanier__teddy__mid">
-//                     <div class="title">
-//                         <div class="title__name">
-//                         ${teddyResponse.name}
-//                         </div>
-//                         <div class="title__id">
-//                             ${teddyResponse._id}
-//                         </div>
-//                     </div>
-//                 </div>
-
-//                 <div class="recapPanier__teddy__right">
-//                     <div class="recapPanier__right__price">
-                        
-//                     </div>
-//                     <a class="teddyRemove" id="${teddyResponse._id}"> X </a>
-//                 </div>
-//             </div>
-//             `;
-// }
-
-// function bindRemoveTeddy(){
-//     let btnTeddyRemove = document.getElementsById(`${teddyResponse._id}`);
-//     btnTeddyRemove.addEventListener('click', function(){
-//         panier.removeItem(`${teddyResponse._id}`);
-//         sessionStorage.setItem("panier", JSON.stringify(panier));
-//         console.log(JSON.parse(sessionStorage.panier));
-//         generatePanier();
-//     });
-// }

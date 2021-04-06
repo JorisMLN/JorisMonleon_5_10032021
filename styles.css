@@ -555,7 +555,7 @@ footer {
 
 .container .panier__page--left .recapPanier__teddy__mid {
   height: 100%;
-  width: 70%;
+  width: 65%;
 }
 
 .container .panier__page--left .recapPanier__teddy__mid .title {
@@ -585,8 +585,11 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 50%;
-  width: 50%;
+  width: 70%;
 }
 
 .container .panier__page--left .recapPanier__teddy__mid .title__incrementation {
@@ -599,7 +602,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 50%;
-  width: 50%;
+  width: 30%;
 }
 
 .container .panier__page--left .recapPanier__teddy__mid .title__id {
@@ -630,7 +633,7 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 99%;
-  width: 15%;
+  width: 20%;
 }
 
 .container .panier__page--left .recapPanier__teddy__right__price {
@@ -642,6 +645,8 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 50%;
+  width: 99%;
 }
 
 .container .panier__page--left .recapPanier__teddy__right .teddyRemove {
@@ -657,8 +662,8 @@ footer {
   text-decoration: none;
   border: 2px solid #132B40;
   border-radius: 10px;
-  width: 90%;
-  height: 50%;
+  width: 65%;
+  height: 33%;
   cursor: pointer;
 }
 

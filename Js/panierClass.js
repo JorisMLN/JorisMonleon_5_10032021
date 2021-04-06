@@ -15,11 +15,11 @@ export default class Panier {
             this.teddies[teddyId].quantity += 1; 
         }
     }
-    // removeItem(teddyId){
-    //     this.teddies[teddyId] -= 1;
-    //     if(this.teddies[teddyId] === 0){
-    //         delete this.teddies[teddyId];
-    //     }
-    // }
+    removeItem(teddyId){
+        this.teddies[teddyId].quantity -= 1;
+        if(this.teddies[teddyId].quantity === 0){
+            delete this.teddies[teddyId];
+        }
+    }
 }
 
