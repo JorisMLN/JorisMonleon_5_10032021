@@ -93,7 +93,8 @@ function cart(teddy) {
         let panier_json = sessionStorage.getItem("panier");
         panier = Object.assign(new Panier, JSON.parse(panier_json));
     }
-    panier.addItem(teddy._id);
+    // panier.addItem(teddy._id);
+    panier.addItem(teddy._id, teddy);
     sessionStorage.setItem("panier", JSON.stringify(panier));
     console.log(JSON.parse(sessionStorage.panier));
 };

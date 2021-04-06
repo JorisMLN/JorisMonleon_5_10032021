@@ -16,7 +16,6 @@ function generatePanier(){
     let htmlString = '';
     // let totalPrice = 0;
     for(let teddyId in panier.teddies){
-
         htmlString += getPanierTemplate(teddyId);
     };
     let teddyListCommand = document.getElementById('recapPanier'); /* Variable de la Div qui accueille le récapitulatif */
@@ -27,26 +26,26 @@ function generatePanier(){
 function getPanierTemplate(teddyId){
     return `<div class="recapPanier__teddy">
                 <div class="recapPanier__teddy__left">
-                    <img src="" alt="ours en peluche">
+                    <img src="${panier.teddies[teddyId].imageUrl}" alt="ours en peluche">
                 </div>
 
                 <div class="recapPanier__teddy__mid">
                     <div class="title">
                         <div class="title__name">
-                        
+                            ${panier.teddies[teddyId].name}
                         </div>
                         <div class="incrementation">
-                           X ${panier.teddies[teddyId]}
+                           X ${panier.teddies[teddyId].quantity}
                         </div>
                         <div class="title__id">
-                            ${teddyId}
+                            ${panier.teddies[teddyId]._id}
                         </div>
                     </div>
                 </div>
 
                 <div class="recapPanier__teddy__right">
                     <div class="recapPanier__right__price">
-                        
+                        ${panier.teddies[teddyId].price}
                     </div>
                     <a class="teddyRemove" id="${teddyId}"> X </a>
                 </div>
