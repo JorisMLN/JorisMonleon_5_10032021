@@ -455,6 +455,18 @@ footer {
   width: 90%;
 }
 
+.container #pageDuPanier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
 .container .panier__page {
   border: 1px solid #00ff0d;
   display: -webkit-box;
@@ -601,6 +613,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid red;
   height: 50%;
   width: 30%;
 }

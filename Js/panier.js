@@ -3,6 +3,9 @@ import Panier from './panierClass.js';
 /* ---------------- P A G E - P A N I E R ---------------- */
 
 
+// let emptyCart = document.getElementById('emptyCart');
+// emptyCart.innerHTML = "<div><h2> P A N I E R - V I D E </h2></div>";
+
 let panier_json = sessionStorage.getItem("panier");
 console.log(panier_json);
 let panier = Object.assign(new Panier, JSON.parse(panier_json));
@@ -10,9 +13,8 @@ console.log(panier);
 
 generatePanier(); /* HtmlString + Boucle ForEach pour créer dynamiquement le récapitulatif de commande */
 
-
 function generatePanier(){
-
+    checkEmptyCart();
     let htmlString = '';
     let totalPrice = 0;
     for(let teddyId in panier.teddies){
@@ -23,7 +25,15 @@ function generatePanier(){
     teddyListCommand.innerHTML = htmlString;
     let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
     priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
+
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
+}
+
+function checkEmptyCart(){
+    if (sessionStorage.panier === undefined || sessionStorage.panier === null){
+        let emptyCart = document.getElementById('emptyCart');
+        emptyCart.innerHTML = "<div><h2> P A N I E R - V I D E </h2></div>";
+    }
 }
 
 function getPanierTemplate(teddyId){
@@ -64,6 +74,7 @@ function bindRemoveTeddy(){
             panier.removeItem(event.target.id);
             sessionStorage.setItem("panier", JSON.stringify(panier));
             console.log(JSON.parse(sessionStorage.panier));
+
             generatePanier();
         });
     });

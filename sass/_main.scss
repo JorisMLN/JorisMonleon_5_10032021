@@ -241,6 +241,10 @@ footer{
     flex-direction: column;
     height: 80vh;
     width: 90%;
+    #pageDuPanier{
+        @include flexAroundCenter;
+        color: black;
+    }
     .panier__page{
         border: 1px solid rgb(0, 255, 13);
         @include flexAroundCenter;
@@ -301,6 +305,7 @@ footer{
                             }
                             &__incrementation{
                                 @include flexAroundCenter;
+                                border: 1px solid red;
                                 height: 50%;
                                 width: 30%;
                             }
