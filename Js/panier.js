@@ -1,3 +1,4 @@
+import { json } from 'body-parser';
 import Panier from './panierClass.js';
 
 /* ---------------- P A G E - P A N I E R ---------------- */
@@ -28,6 +29,7 @@ function generatePanier(){
 
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
 }
+postCommand();
 
 function checkEmptyCart(){
     if (sessionStorage.panier === undefined || sessionStorage.panier === null){
@@ -77,5 +79,18 @@ function bindRemoveTeddy(){
 
             generatePanier();
         });
+    });
+}
+
+function postCommand(){
+    let btnCommand = document.getElementById("btnCommand");
+    btnCommand.addEventListener('click', function(){
+        let postCommand = new XMLHttpRequest();
+        postCommand.onreadystatechange = function(){
+            panier;
+        }
+        postCommand.open("POST", "http://localhost:3000/api/teddies/order");
+        postCommand.setRequestHeader("content-Type", "application/json");
+        postCommand.send(JSON.stringify(jsonBody));
     });
 }
