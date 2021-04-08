@@ -51,25 +51,28 @@
                     <form method="post" action="traitement.js">
 
                         <fieldset>
+                            <legend>Identité</legend>
                             <label for="nom">Nom:</label>
-                            <input type="text" name="nom" id="nom" />
+                            <input type="text" name="nom" id="nom" minlength="2" placeholder="Dupont" autofocus required/>
                             <label for="prenom">Prénom:</label>
-                            <input type="text" name="prenom" id="prenom" />
+                            <input type="text" name="prenom" id="prenom" minlength="2" placeholder="Martin" required/>
                             <br />
                         </fieldset>
 
                         <fieldset>
+                            <legend>Lieu de résidence</legend>
                             <label for="adress">Adress:</label>
-                            <input type="text" name="adress" id="adress" />
+                            <input type="text" name="adress" id="adress" required/>
                             <label for="ville">Ville:</label>
-                            <input type="text" name="ville" id="ville" />
+                            <input type="text" name="ville" id="ville" required/>
                         </fieldset>
 
                         <fieldset>
+                            <legend>Pour vous contacter</legen>
                             <label for="email">E-mail:</label>
-                            <input type="email" name="email" id="email" />
+                            <input type="email" name="email" id="email" required/>
                         </fieldset>
-
+                        <!-- <a href="commande.html" class="button" id="btnCommand" type="submit">Commander !</a> -->
                      </form>
                 </div>
                 <a href="commande.html" class="button" id="btnCommand">Commander !</a>

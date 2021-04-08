@@ -28,7 +28,7 @@ function generatePanier(){
 
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
 }
-postCommand();
+postCommand(); /* Ecoute du btn commande + envoie des data avec "POST" */
 
 
 
