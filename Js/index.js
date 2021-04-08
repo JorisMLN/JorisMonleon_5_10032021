@@ -49,19 +49,3 @@ requestTeddies.onreadystatechange = function(){
 };
 requestTeddies.open("GET", "http://localhost:3000/api/teddies");
 requestTeddies.send();
-
-
-
-/* ---------------- C H E C K L I S T ---------------- */
-
-
-
-/* 
-[CHECK] 1 - Récupérer les articles venant du serveur (cf AJAX)(Page Index). [CHECK]
-[CHECK] 2 - Afficher dynamiquement les differents produits sur la page index 
-        après les avoir recuperé du serveur (cf Array Javascript, String template multiline).
-[CHECK] 3 - Afficher dynamiquement les détails d'un article en recupérant ses données 
-        à partir du serveur (cf AJAX,String tamplate mulltilne).
-[CHECK] 4 - Get value of get parameter in JS
-*/
- 

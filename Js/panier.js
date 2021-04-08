@@ -4,8 +4,7 @@ import Panier from './panierClass.js';
 /* ---------------- P A G E - P A N I E R ---------------- */
 
 
-// let emptyCart = document.getElementById('emptyCart');
-// emptyCart.innerHTML = "<div><h2> P A N I E R - V I D E </h2></div>";
+
 
 let panier_json = sessionStorage.getItem("panier");
 console.log(panier_json);
@@ -30,6 +29,11 @@ function generatePanier(){
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
 }
 postCommand();
+
+
+
+
+/* ---------------- F U N C T I O N S ---------------- */
 
 function checkEmptyCart(){
     if (sessionStorage.panier === undefined || sessionStorage.panier === null){
@@ -69,14 +73,12 @@ function getPanierTemplate(teddyId){
 }
 function bindRemoveTeddy(){
     let btnTeddyRemove = document.getElementsByClassName("teddyRemove");
-
     Array.from(btnTeddyRemove).forEach((btnTeddy) => {
         btnTeddy.addEventListener('click', function(event){
             console.log(event.target.id);
             panier.removeItem(event.target.id);
             sessionStorage.setItem("panier", JSON.stringify(panier));
             console.log(JSON.parse(sessionStorage.panier));
-
             generatePanier();
         });
     });

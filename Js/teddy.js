@@ -32,6 +32,11 @@ requestTeddy.onreadystatechange = function(){
 requestTeddy.open("GET", `http://localhost:3000/api/teddies/${teddyApiParameters}`);
 requestTeddy.send();
 
+
+
+
+/* ---------------- F U N C T I O N S ---------------- */
+
 function getArticleTemplate(teddy){
     return `<article class="teddy__page">
                 <div class="teddy__page--left">
@@ -69,20 +74,12 @@ function setColorsOptions(teddy){
         teddyColors.innerHTML = colorString;
 }
 
-
-
-/* ---------------- P A N I E R ---------------- */
-
-
-
-/* Ecoute du click sur le bouton d'ajout du Teddy */
 function addTeddyToCart(teddy){
     let btnToCommand = document.getElementById('buttonTeddy');
     btnToCommand.addEventListener('click', function(){
         cart(teddy);
     });
 }
-
 
 /* Function de gestion du panier pour le sessionStorage */
 function cart(teddy) {
@@ -93,7 +90,6 @@ function cart(teddy) {
         let panier_json = sessionStorage.getItem("panier");
         panier = Object.assign(new Panier, JSON.parse(panier_json));
     }
-    // panier.addItem(teddy._id);
     panier.addItem(teddy._id, teddy);
     sessionStorage.setItem("panier", JSON.stringify(panier));
     console.log(JSON.parse(sessionStorage.panier));
