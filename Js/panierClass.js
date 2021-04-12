@@ -1,6 +1,7 @@
 
-
 /* ---------------- C L A S S - P A N I E R ---------------- */
+
+
 
 export default class Panier {
     constructor(owner, teddies){

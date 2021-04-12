@@ -1,4 +1,3 @@
-import { json } from 'body-parser';
 import Panier from './panierClass.js';
 
 /* ---------------- P A G E - P A N I E R ---------------- */
@@ -7,11 +6,16 @@ import Panier from './panierClass.js';
 
 
 let panier_json = sessionStorage.getItem("panier");
-console.log(panier_json);
 let panier = Object.assign(new Panier, JSON.parse(panier_json));
 console.log(panier);
 
 generatePanier(); /* HtmlString + Boucle ForEach pour créer dynamiquement le récapitulatif de commande */
+postCommand(); /* Ecoute du btn commande + envoie des data avec "POST" */
+
+
+
+
+/* ---------------- F U N C T I O N S ---------------- */
 
 function generatePanier(){
     checkEmptyCart();
@@ -28,12 +32,6 @@ function generatePanier(){
 
     bindRemoveTeddy(); /* Button pour Remove un article du panier */
 }
-postCommand(); /* Ecoute du btn commande + envoie des data avec "POST" */
-
-
-
-
-/* ---------------- F U N C T I O N S ---------------- */
 
 function checkEmptyCart(){
     if (sessionStorage.panier === undefined || sessionStorage.panier === null){
@@ -71,6 +69,7 @@ function getPanierTemplate(teddyId){
             </div>
             `;
 }
+
 function bindRemoveTeddy(){
     let btnTeddyRemove = document.getElementsByClassName("teddyRemove");
     Array.from(btnTeddyRemove).forEach((btnTeddy) => {
@@ -87,12 +86,37 @@ function bindRemoveTeddy(){
 function postCommand(){
     let btnCommand = document.getElementById("btnCommand");
     btnCommand.addEventListener('click', function(){
+
+        let objetContact = {
+            lastName: document.getElementById("nom").value,
+            firstName: document.getElementById("prenom").value,
+            address: document.getElementById("adress").value,
+            city: document.getElementById("ville").value,
+            email: document.getElementById("email").value
+        }
+        
+         // let panierArray = Object.keys(panier.teddies).reduce((result, teddyId) => {
+        //     result.push({teddyId: panier.teddies[teddyId].quantity})
+        //     return result;
+        // }, [])
+
+        let panierArray = [];
+        Object.keys(panier.teddies).forEach((teddyId) => {
+            // panierArray.push({[teddyId]: panier.teddies[teddyId].quantity})
+            panierArray.push(teddyId);
+        })
+
+        let commande = {contact: objetContact, products: panierArray};
+
         let postCommand = new XMLHttpRequest();
         postCommand.onreadystatechange = function(){
-            panier;
+            
+            console.log(commande);
         }
         postCommand.open("POST", "http://localhost:3000/api/teddies/order");
         postCommand.setRequestHeader("content-Type", "application/json");
-        postCommand.send(JSON.stringify(jsonBody));
+        postCommand.send(JSON.stringify(commande));
+
+        console.log(JSON.stringify(commande));
     });
 }

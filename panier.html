@@ -48,34 +48,36 @@
             </div>
             <div class="panier__page--right">
                 <div class="formulaire">
-                    <form method="post" action="traitement.js">
+                    <form method="post">
 
                         <fieldset>
                             <legend>Identité</legend>
                             <label for="nom">Nom:</label>
-                            <input type="text" name="nom" id="nom" minlength="2" placeholder="Dupont" autofocus required/>
+                            <input type="text" name="nom" id="nom" minlength="2" value="Dupont" required/>
                             <label for="prenom">Prénom:</label>
-                            <input type="text" name="prenom" id="prenom" minlength="2" placeholder="Martin" required/>
+                            <input type="text" name="prenom" id="prenom" minlength="2" value="Martin" required/>
                             <br />
                         </fieldset>
 
                         <fieldset>
                             <legend>Lieu de résidence</legend>
                             <label for="adress">Adress:</label>
-                            <input type="text" name="adress" id="adress" required/>
+                            <input type="text" name="adress" id="adress" value="3 rue haute" required/>
                             <label for="ville">Ville:</label>
-                            <input type="text" name="ville" id="ville" required/>
+                            <input type="text" name="ville" id="ville" value="Toulouse" required/>
                         </fieldset>
 
                         <fieldset>
                             <legend>Pour vous contacter</legen>
                             <label for="email">E-mail:</label>
-                            <input type="email" name="email" id="email" required/>
+                            <input type="email" name="email" id="email" value="testtest@gmail.com"required/>
                         </fieldset>
+
                         <!-- <a href="commande.html" class="button" id="btnCommand" type="submit">Commander !</a> -->
+                        
                      </form>
                 </div>
-                <a href="commande.html" class="button" id="btnCommand">Commander !</a>
+                <a class="button" id="btnCommand">Commander !</a>
             </div> 
         </article>
     </section>
