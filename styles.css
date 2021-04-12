@@ -497,7 +497,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 30%;
+  width: 38%;
   height: 90%;
   border-radius: 10px;
   border: 1px solid #132B40;
@@ -602,6 +602,7 @@ footer {
           justify-content: flex-end;
   height: 50%;
   width: 70%;
+  font-weight: bold;
 }
 
 .container .panier__page--left .recapPanier__teddy__mid .title__incrementation {
@@ -712,7 +713,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
+  width: 57%;
   height: 90%;
   border-radius: 10px;
   border: 1px solid #132B40;

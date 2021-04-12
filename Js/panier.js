@@ -54,6 +54,7 @@ function getPanierTemplate(teddyId) {
                     <div class="title">
                         <div class="title__name">
                             ${panier.teddies[teddyId].name}
+                            $${panier.teddies[teddyId].price} 
                         </div>
                         <div class="incrementation">
                            X ${panier.teddies[teddyId].quantity} =
@@ -66,7 +67,7 @@ function getPanierTemplate(teddyId) {
 
                 <div class="recapPanier__teddy__right">
                     <div class="recapPanier__right__price"> 
-                        ${panier.teddies[teddyId].price * panier.teddies[teddyId].quantity} $
+                        $${panier.teddies[teddyId].price * panier.teddies[teddyId].quantity}
                     </div>
                     <a class="teddyRemove" id="${teddyId}"> X </a>
                 </div>
@@ -113,8 +114,14 @@ function postCommand() {
     
             let panierArray = [];
             Object.keys(panier.teddies).forEach((teddyId) => {
-                // panierArray.push({[teddyId]: panier.teddies[teddyId].quantity})
-                panierArray.push(teddyId);
+
+                let quantity = (panier.teddies[teddyId].quantity);
+                console.log(quantity)
+
+                let i;
+                for (i = 0; i < quantity; i++){
+                    panierArray.push(teddyId);
+                }
             })
     
             let commande = { contact: objetContact, products: panierArray };
@@ -122,12 +129,12 @@ function postCommand() {
             let postCommand = new XMLHttpRequest();
             postCommand.onreadystatechange = function () {
     
-                console.log(commande);
+                // console.log(commande);
             }
             postCommand.open("POST", "http://localhost:3000/api/teddies/order");
             postCommand.setRequestHeader("content-Type", "application/json");
             postCommand.send(JSON.stringify(commande));
-    
+            console.log(commande);
             console.log(JSON.stringify(commande));
         } 
     });
