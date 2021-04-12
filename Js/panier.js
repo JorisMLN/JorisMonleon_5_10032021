@@ -10,37 +10,38 @@ let panier = Object.assign(new Panier, JSON.parse(panier_json));
 console.log(panier);
 
 generatePanier(); /* HtmlString + Boucle ForEach pour créer dynamiquement le récapitulatif de commande */
-postCommand(); /* Ecoute du btn commande + envoie des data avec "POST" */
-
 
 
 
 /* ---------------- F U N C T I O N S ---------------- */
 
-function generatePanier(){
-    checkEmptyCart();
-    let htmlString = '';
-    let totalPrice = 0;
-    for(let teddyId in panier.teddies){
-        htmlString += getPanierTemplate(teddyId);
-        totalPrice += panier.teddies[teddyId].price * panier.teddies[teddyId].quantity;
-    };
-    let teddyListCommand = document.getElementById('recapPanier'); /* Variable de la Div qui accueille le récapitulatif */
-    teddyListCommand.innerHTML = htmlString;
-    let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
-    priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
-
-    bindRemoveTeddy(); /* Button pour Remove un article du panier */
-}
-
-function checkEmptyCart(){
-    if (sessionStorage.panier === undefined || sessionStorage.panier === null){
+function generatePanier() {
+    if (checkEmptyCart()) {
         let emptyCart = document.getElementById('emptyCart');
         emptyCart.innerHTML = "<div><h2> P A N I E R - V I D E </h2></div>";
+    } else {
+        let htmlString = '';
+        let totalPrice = 0;
+        for (let teddyId in panier.teddies) {
+            htmlString += getPanierTemplate(teddyId);
+            totalPrice += panier.teddies[teddyId].price * panier.teddies[teddyId].quantity;
+        };
+
+        let teddyListCommand = document.getElementById('recapPanier'); /* Variable de la Div qui accueille le récapitulatif */
+        teddyListCommand.innerHTML = htmlString;
+        let priceCommand = document.getElementById("priceCommand"); /* Affichage du total Price dans le HTML */
+        priceCommand.innerHTML = `Total de la commande: ${totalPrice} €`;
+
+        bindRemoveTeddy(); /* Button pour Remove un article du panier */
+        postCommand(); /* Ecoute du btn commande + envoie des data avec "POST" */
     }
 }
 
-function getPanierTemplate(teddyId){
+function checkEmptyCart() {
+    return sessionStorage.panier === undefined || sessionStorage.panier === null || Object.keys(panier.teddies).length === 0;
+}
+
+function getPanierTemplate(teddyId) {
     return `<div class="recapPanier__teddy">
                 <div class="recapPanier__teddy__left">
                     <img src="${panier.teddies[teddyId].imageUrl}" alt="ours en peluche">
@@ -70,10 +71,10 @@ function getPanierTemplate(teddyId){
             `;
 }
 
-function bindRemoveTeddy(){
+function bindRemoveTeddy() {
     let btnTeddyRemove = document.getElementsByClassName("teddyRemove");
     Array.from(btnTeddyRemove).forEach((btnTeddy) => {
-        btnTeddy.addEventListener('click', function(event){
+        btnTeddy.addEventListener('click', function (event) {
             console.log(event.target.id);
             panier.removeItem(event.target.id);
             sessionStorage.setItem("panier", JSON.stringify(panier));
@@ -83,9 +84,9 @@ function bindRemoveTeddy(){
     });
 }
 
-function postCommand(){
+function postCommand() {
     let btnCommand = document.getElementById("btnCommand");
-    btnCommand.addEventListener('click', function(){
+    btnCommand.addEventListener('click', function () {
 
         let objetContact = {
             lastName: document.getElementById("nom").value,
@@ -94,8 +95,8 @@ function postCommand(){
             city: document.getElementById("ville").value,
             email: document.getElementById("email").value
         }
-        
-         // let panierArray = Object.keys(panier.teddies).reduce((result, teddyId) => {
+
+        // let panierArray = Object.keys(panier.teddies).reduce((result, teddyId) => {
         //     result.push({teddyId: panier.teddies[teddyId].quantity})
         //     return result;
         // }, [])
@@ -106,11 +107,11 @@ function postCommand(){
             panierArray.push(teddyId);
         })
 
-        let commande = {contact: objetContact, products: panierArray};
+        let commande = { contact: objetContact, products: panierArray };
 
         let postCommand = new XMLHttpRequest();
-        postCommand.onreadystatechange = function(){
-            
+        postCommand.onreadystatechange = function () {
+
             console.log(commande);
         }
         postCommand.open("POST", "http://localhost:3000/api/teddies/order");
