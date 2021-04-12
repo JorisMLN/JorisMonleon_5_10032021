@@ -116,7 +116,6 @@ function postCommand() {
             Object.keys(panier.teddies).forEach((teddyId) => {
 
                 let quantity = (panier.teddies[teddyId].quantity);
-                console.log(quantity)
 
                 let i;
                 for (i = 0; i < quantity; i++){
@@ -128,8 +127,10 @@ function postCommand() {
     
             let postCommand = new XMLHttpRequest();
             postCommand.onreadystatechange = function () {
-    
-                // console.log(commande);
+                if (this.readyState == XMLHttpRequest.DONE && this.status == 201){
+                sessionStorage.setItem("order", this.response);
+                console.log(JSON.parse(this.response));
+                }
             }
             postCommand.open("POST", "http://localhost:3000/api/teddies/order");
             postCommand.setRequestHeader("content-Type", "application/json");
