@@ -380,3 +380,54 @@ footer{
         }
     }
 }
+
+
+
+
+
+
+/* Commande's Page */
+.container{
+    @include flexAroundCenter;
+    background-color: $secondaire;
+    flex-direction: column;
+    width: 90%;
+    width: 90%;
+    .main{
+        @include flexAroundCenter;
+        flex-direction: column;
+        height: 50%;
+        width: 50%;
+        border-radius: 10px;
+        border: 1px solid $primaire;
+        background-color: $sand;
+        &__title{
+            @include flexAroundCenter;
+            flex-direction: column;
+            border: 1px solid $primaire;
+            height: 30%;
+            width: 90%;
+        }
+        &__thanks{
+            @include flexAroundCenter;
+            flex-direction: column;
+            border: 1px solid $primaire;
+            height: 20%;
+            width: 90%;
+        }
+        &__total{
+            @include flexAroundCenter;
+            flex-direction: column;
+            border: 1px solid $primaire;
+            height: 15%;
+            width: 90%;
+        }
+        &__id{
+            @include flexAroundCenter;
+            flex-direction: column;
+            border: 1px solid $primaire;
+            height: 35%;
+            width: 90%;
+        }
+    }
+}
