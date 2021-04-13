@@ -60,7 +60,7 @@ function getPanierTemplate(teddyId) {
                            X ${panier.teddies[teddyId].quantity} =
                         </div>
                         <div class="title__id">
-                            ${panier.teddies[teddyId]._id}
+                            Id :${panier.teddies[teddyId]._id}
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ mainString.innerHTML = getCommandTemplate(commande);
 
 function getCommandTemplate(commande){
     return `
-            <h2 class="main__title">Orinoco</h2>
+            <img src="images/logotest.png">
             <p class="main__thanks">Merci beaucoup pour votre commande ! Vive les Teddies o/</p>
             <p class="main__total">Total de la commande: ${getTotalCommande()}</p>
             <p class="main__id">Identifiant de la commande: ${commande.orderId}</p>

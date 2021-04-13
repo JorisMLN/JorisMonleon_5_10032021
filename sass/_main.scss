@@ -62,19 +62,20 @@
     width: 90%;
     .blockTeddyList{
         @include flexAroundCenter;
-        flex-direction: column;
+        // flex-direction: column;
         height: 98%;
+        width: 100%;
         .row{
             @include flexAroundCenter;
             border-radius: 4px;
             overflow: hidden;
-            width: 98%;
-            height: 20%;
+            width: 18%;
+            height: 80%;
             border: 1px solid $primaire;
             background-color: $sand;
             &__left{
-                height: 99%;
-                width: 25%;
+                height: 20%;
+                width: 100%;
                 overflow: hidden;
                 img{
                     @include flexAroundCenter;
@@ -82,8 +83,10 @@
                 }
             }
             &__mid{
-                height: 99%;
-                width: 55%;
+                @include flexAroundCenter;
+                flex-direction: column;
+                height: 60%;
+                width: 100%;
                 overflow: hidden;
                 .title{
                     @include flexAroundCenter;
@@ -91,24 +94,24 @@
                     width: 100%;
                     height: 20%;
                     &__name{
-                        width: 49%;
-                        height: 99%;
-                    }
-                    &__id{
-                        width: 49%;
-                        height: 99%;
+                        @include flexAroundCenter;
+                        width: 100%;
+                        height: 100%;
+                        font-weight: bold;
                     }
                 }
                 &__description{
                     @include flexAroundCenter;
+                    text-align: justify;
                     height: 79%;
+                    width: 90%
                 }
             }
             &__right{
                 @include flexAroundCenter;
                 flex-direction: column;
-                height: 99%;
-                width: 20%;
+                height: 20%;
+                width: 100%;
                 overflow: hidden;
                 &__price{
                     border: 2px solid $tertiaire;
@@ -116,15 +119,21 @@
                     width: 30%;
                     height: 30%;
                     @include flexAroundCenter;
+                    font-weight: bold;
                 }
                 .button{
                     border: 2px solid $primaire;
+                    background-color: $fire;
                     border-radius: 10px;
                     width: 80%;
                     height: 40%;
                     @include flexAroundCenter;
                     &:hover{
                         background-color: $tertiaire;
+                        border: 2px solid $secondaire;
+                    }
+                    &:active{
+                        background-color: lighten($tertiaire, $amount: 10);
                     }
                 }
                 a{
@@ -161,21 +170,20 @@ footer{
     height: 80vh;
     width: 90%;
     .teddy__page{
-        border: 1px solid rgb(0, 255, 13);
         @include flexAroundCenter;
         height: 80%;
         width: 90%;
         border-radius: 5px;
-        border: 1px solid $primaire;
+        // border: 1px solid $primaire;
         background-color: $sand;
         &--left{
             @include flexAroundCenter;
             width: 48%;
-            height: 90%;
+            height: 75%;
             overflow: hidden;
             border-radius: 5px;
             img{
-                display: flex;
+                @include flexAroundCenter;
                 height: 100%;
                 overflow: hidden;
             }
@@ -183,10 +191,10 @@ footer{
         &--right{
             @include flexAroundCenter;
             flex-direction: column;
-            border: 1px solid $primaire;
+            border: 2px solid $primaire;
             border-radius: 5px;
             width: 48%;
-            height:80%;
+            height:75%;
             &--nameID{
                 @include flexAroundCenter;
                 flex-direction: column;
@@ -198,17 +206,32 @@ footer{
             }
             &--description{
                 @include flexAroundCenter;
-                border: 1px solid $tertiaire;
+                text-align: justify;
                 border-radius: 5px;
                 width: 90%;
                 height:55%;
             }
+            .plusUn{
+                @include flexAroundCenter;
+                // margin-right: -250px;
+                // margin-bottom: -25px;
+                color: green;
+                font-size: 40px;
+                // opacity: 0;
+                transition: transform 500ms ease-in-out;
+            }
             &--bottom{
                 @include flexAroundCenter;
-                border: 1px solid $tertiaire;
                 border-radius: 5px;
                 width: 90%;
                 height: 15%;
+                .teddyColor{
+                    @include flexAroundCenter;
+                    border: 1px solid $secondaire;
+                    border-radius: 10px;
+                    width: 55%;
+                    height: 80%;
+                }
                 #buttonTeddy{
                     @include flexAroundCenter;
                     border: 2px solid $primaire;
@@ -218,19 +241,34 @@ footer{
                     cursor: pointer;
                     &:hover{
                         background-color: $tertiaire;
+                        border: 2px solid $secondaire;
                     }
                     &:active{
                         background-color: lighten($tertiaire, $amount: 10);
                     }
+                    &:active + .plusUn{
+                        animation: plusOne 400;
+                    } 
                 }
             } 
         }
     }
 }
 
-
-
-
+@keyframes plusOne{
+    from{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
 
 
 
@@ -246,12 +284,11 @@ footer{
         color: black;
     }
     .panier__page{
-        border: 1px solid rgb(0, 255, 13);
         @include flexAroundCenter;
         height: 80%;
         width: 90%;
         border-radius: 10px;
-        border: 1px solid $primaire;
+        // border: 1px solid $primaire;
         background-color: $sand;
         &--left{
             @include flexAroundCenter;
@@ -259,10 +296,10 @@ footer{
             width: 38%;
             height: 90%;
             border-radius: 10px;
-            border: 1px solid $primaire;
+            border: 2px solid $primaire;
             .recapPanier-title{
                 @include flexAroundCenter;
-                border: 1px solid $tertiaire;
+                // border: 1px solid $tertiaire;
                 width: 99%;
                 height: 10%;
                 border-radius: 10px 10px 0px 0px;
@@ -312,6 +349,7 @@ footer{
                             }
                             &__id{
                                 @include flexAroundCenter;
+                                font-size: 12px;
                                 overflow: hidden;
                                 height: 50%;
                                 width: 100%;
@@ -347,9 +385,10 @@ footer{
             #priceCommand{
                 @include flexAroundCenter;
                 width: 99%;
+                font-weight: bold;
                 height: 10%;
                 border-radius: 0px 0px 10px 10px;
-                border: 1px solid $primaire;
+                // border: 1px solid $primaire;
             }
         }
         &--right{
@@ -388,25 +427,19 @@ footer{
 
 /* Commande's Page */
 .container{
-    @include flexAroundCenter;
-    background-color: $secondaire;
-    flex-direction: column;
-    width: 90%;
-    width: 90%;
     .main{
         @include flexAroundCenter;
         flex-direction: column;
-        height: 50%;
+        height: 70%;
         width: 50%;
         border-radius: 10px;
         border: 1px solid $primaire;
         background-color: $sand;
-        &__title{
+        img{
             @include flexAroundCenter;
             flex-direction: column;
             border: 1px solid $primaire;
-            height: 30%;
-            width: 90%;
+            border-radius: 8px;
         }
         &__thanks{
             @include flexAroundCenter;

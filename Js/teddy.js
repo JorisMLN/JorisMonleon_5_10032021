@@ -50,14 +50,15 @@ function getArticleTemplate(teddy){
                 <div class="teddy__page--right--description">
                     <p> ${teddy.description} </p>
                 </div>
+                
                 <div class="teddy__page--right--bottom">
-                    <div>-
-                        <label> Couleur </label>
+                    <div class="teddyColor">
+                        <label> Couleur : </label>
                         <select name="couleur" id="teddyColors">
-                    
                         </select>
                     </div>
                     <a class="button" id="buttonTeddy">Ajouter au Panier</a>
+                    <div class="plusUn">+1</div>
                 </div>
             </article>
         `;

@@ -20,20 +20,17 @@ requestTeddies.onreadystatechange = function(){
                 </div>
                 <div class="row__mid">
                     <div class="title">
-                    <div class="title__name">
-                        ${teddy.name}
-                    </div>
-                        <div class="title__id">
-                            ${teddy._id}
+                        <div class="title__name">
+                            ${teddy.name}
                         </div>
                     </div>
                     <div class="row__mid__description">
                         ${teddy.description}
                     </div>
-                </div>
+                    </div>
                 <div class="row__right">
                     <div class="row__right__price">
-                        ${teddy.price}
+                    $${teddy.price}
                     </div>
                     <a href="teddy.html?id=${teddy._id}" class="button">
                         Voir l'article
