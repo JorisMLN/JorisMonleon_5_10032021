@@ -112,6 +112,8 @@ function postCommand() {
             //     result.push({teddyId: panier.teddies[teddyId].quantity})
             //     return result;
             // }, [])
+            
+            // delay("commande.html");
 
             let panierArray = [];
             Object.keys(panier.teddies).forEach((teddyId) => {
@@ -131,7 +133,7 @@ function postCommand() {
                 if (this.readyState == XMLHttpRequest.DONE && this.status == 201){
                 sessionStorage.setItem("order", this.response);
                 console.log(JSON.parse(this.response));
-                
+                window.location = "http://127.0.0.1:5500/commande.html";
                 }
             }
 
@@ -139,7 +141,11 @@ function postCommand() {
             postCommand.setRequestHeader("content-Type", "application/json");
             postCommand.send(JSON.stringify(commande));
             console.log(JSON.stringify(commande));
-            window.location = "http://127.0.0.1:5500/commande.html";
+            
         }
     });
 }
+
+// function delay (URL){
+//     setTimeout( function() {window.location = URL}, 500);
+// }
