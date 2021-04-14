@@ -3,41 +3,41 @@ import Panier from './panierClass.js';
 /* ---------------- P A G E - T E D D Y ---------------- */
 
 
-
-/* Récupération des paramètres dans l'URL */ /* exemple: ?id=5be9c8541c9d440000665243 */
-let teddyParameters = window.location.search;
-let teddyApiParameters = teddyParameters.substr(4);
-console.log(teddyApiParameters);
-
-let requestTeddy = new XMLHttpRequest();
-requestTeddy.onreadystatechange = function(){
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
-        let teddy = JSON.parse(this.responseText);
-        console.log(teddy);
-
-        /* HTML dynamique pour les pages Teddy en details */
-        let htmlString = getArticleTemplate(teddy);
-
-        /* Variable de la Div qui accueille le details */
-        let teddyPage =  document.getElementById('teddyPage');
-        teddyPage.innerHTML = htmlString;
-
-        /* Boucle pour les couleurs des Teddies */
-        setColorsOptions(teddy);
-
-        /* Ecoute du click d'ajout au panier */
-        addTeddyToCart(teddy);
-    }
-}
-requestTeddy.open("GET", `http://localhost:3000/api/teddies/${teddyApiParameters}`);
-requestTeddy.send();
-
-
+main();
 
 
 /* ---------------- F U N C T I O N S ---------------- */
 
-function getArticleTemplate(teddy){
+function main() {
+    let teddyParameters = window.location.search;
+    let teddyApiParameters = teddyParameters.substr(4);
+    console.log(teddyApiParameters);
+
+    fetch(`http://localhost:3000/api/teddies/${teddyApiParameters}`)
+        .then((response) => {
+            return response.json()
+        })
+        .then((teddy) => {
+            console.log(teddy);
+            /* HTML dynamique pour les pages Teddy en details */
+            let htmlString = getArticleTemplate(teddy);
+
+            /* Variable de la Div qui accueille le details */
+            let teddyPage = document.getElementById('teddyPage');
+            teddyPage.innerHTML = htmlString;
+
+            /* Boucle pour les couleurs des Teddies */
+            setColorsOptions(teddy);
+
+            /* Ecoute du click d'ajout au panier */
+            addTeddyToCart(teddy);
+        })
+        .catch((error) => {
+            console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message)
+        });
+}
+
+function getArticleTemplate(teddy) {
     return `<article class="teddy__page">
                 <div class="teddy__page--left">
                     <img src="${teddy.imageUrl}" alt="ours en peluche">
@@ -64,20 +64,20 @@ function getArticleTemplate(teddy){
         `;
 }
 
-function setColorsOptions(teddy){
-        let colorString = '';
-        teddy.colors.forEach((colors) => {
-                colorString += `
+function setColorsOptions(teddy) {
+    let colorString = '';
+    teddy.colors.forEach((colors) => {
+        colorString += `
             <option>${colors}</option>
             `;
-            });
-        let teddyColors = document.getElementById('teddyColors'); 
-        teddyColors.innerHTML = colorString;
+    });
+    let teddyColors = document.getElementById('teddyColors');
+    teddyColors.innerHTML = colorString;
 }
 
-function addTeddyToCart(teddy){
+function addTeddyToCart(teddy) {
     let btnToCommand = document.getElementById('buttonTeddy');
-    btnToCommand.addEventListener('click', function(){
+    btnToCommand.addEventListener('click', function () {
         cart(teddy);
     });
 }
@@ -85,8 +85,8 @@ function addTeddyToCart(teddy){
 /* Function de gestion du panier pour le sessionStorage */
 function cart(teddy) {
     let panier;
-    if (sessionStorage.panier === undefined || sessionStorage.panier === null){ /*(!sessionsStorage.teddies)*/
-        panier = new Panier ('John Doe', {});
+    if (sessionStorage.panier === undefined || sessionStorage.panier === null) { /*(!sessionsStorage.teddies)*/
+        panier = new Panier('John Doe', {});
     } else {
         let panier_json = sessionStorage.getItem("panier");
         panier = Object.assign(new Panier, JSON.parse(panier_json));
@@ -96,3 +96,37 @@ function cart(teddy) {
     console.log(JSON.parse(sessionStorage.panier));
 };
 
+
+
+
+/* ---------------- 2 N D E - W A Y ---------------- */
+
+// function main() {
+//     /* Récupération des paramètres dans l'URL */ /* exemple: ?id=5be9c8541c9d440000665243 */
+//     let teddyParameters = window.location.search;
+//     let teddyApiParameters = teddyParameters.substr(4);
+//     console.log(teddyApiParameters);
+
+//     let requestTeddy = new XMLHttpRequest();
+//     requestTeddy.onreadystatechange = function () {
+//         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+//             let teddy = JSON.parse(this.responseText);
+//             console.log(teddy);
+
+//             /* HTML dynamique pour les pages Teddy en details */
+//             let htmlString = getArticleTemplate(teddy);
+
+//             /* Variable de la Div qui accueille le details */
+//             let teddyPage = document.getElementById('teddyPage');
+//             teddyPage.innerHTML = htmlString;
+
+//             /* Boucle pour les couleurs des Teddies */
+//             setColorsOptions(teddy);
+
+//             /* Ecoute du click d'ajout au panier */
+//             addTeddyToCart(teddy);
+//         }
+//     }
+//     requestTeddy.open("GET", `http://localhost:3000/api/teddies/${teddyApiParameters}`);
+//     requestTeddy.send();
+// }
