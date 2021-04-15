@@ -208,7 +208,7 @@ footer{
                 @include flexAroundCenter;
                 text-align: justify;
                 border-radius: 5px;
-                width: 90%;
+                width: 80%;
                 height:55%;
             }
             .plusUn{
@@ -216,9 +216,12 @@ footer{
                 // margin-right: -250px;
                 // margin-bottom: -25px;
                 color: green;
-                font-size: 40px;
-                // opacity: 0;
+                font-size: 30px;
+                opacity: 0;
                 transition: transform 500ms ease-in-out;
+            }
+            .appear__teddyItem4{
+                @include flexAroundCenter;
             }
             &--bottom{
                 @include flexAroundCenter;

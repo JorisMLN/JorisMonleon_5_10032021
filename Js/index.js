@@ -23,11 +23,13 @@ function main(){
 
 function loopHtmlString(theResponse) {
     let teddyList = document.getElementById('teddyList');
+
     let htmlString = '';
-    theResponse.forEach((teddy) => {
+    theResponse.forEach((teddy, index) => {
+        let delay = (index*150) + "ms";
         htmlString += `
 
-        <div class="row">
+        <div class="row appear__item" style="animation-delay: ${delay};">
             <div class="row__left">
                 <img src="${teddy.imageUrl}" alt="ours en peluche">
             </div>
@@ -50,6 +52,7 @@ function loopHtmlString(theResponse) {
                 </a>
             </div>
         </div>
+
         `
     });
     teddyList.innerHTML = htmlString;

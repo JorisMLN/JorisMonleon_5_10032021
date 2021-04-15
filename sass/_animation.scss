@@ -1,112 +1,65 @@
-/* Animation d'arrivée sur la page */
 
-// .appear__item1{
-//     animation: appear 4000ms both;
-//     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-// }
-// .appear__item2{
-//     animation: appear 500ms both;
-//     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-//     animation-delay: 4150ms;
-// }
-// .appear__item3{
-//     animation: appear 500ms both;
-//     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-//     animation-delay: 4300ms;
-// }
-// .appear__item4{
-//     animation: appear 500ms both;
-//     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-//     animation-delay: 4450ms;
-// }
-// .appear__item5{
-//     animation: appear 500ms both;
-//     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-//     animation-delay: 4600ms;
-// }
+/* ---------------- Animation d'arrivée sur Index ---------------- */
 
-// @keyframes appear{
-//     from{
-//         opacity: 0;
-//         margin-bottom: -15px;
-//     }
-//     to{
-//         opacity: 1;
-//         margin-bottom: 0px;
-//     }
-// }
 
-/* Loading Animation */
 
-// .hideSpin{
-//     @include flexAroundCenter;
-//     flex-direction: column;
-//     height: 100vh;
-//     animation: hideSpin 1ms forwards;
-//     overflow-x: hidden;
-// }
-// .loading{
-//     @include flexAroundCenter;
-//     width: 100%;
-//     height: 100%;
-//     background-color: $tertiaire;
-//     position: absolute;
-//     animation: loading 1ms forwards;
-//     &__anim{
-//         @include flexAroundCenter;
-//         flex-direction: column;
-//         width: 100%;
-//         &__item{
-//             @include flexAroundCenter;
-//             color: $primaire;
-//             font-size: 200px;
-//             animation: loadingSpinner 1ms 300ms linear both infinite;
-//             &--title{
-//                 @include flexAroundCenter;
-//                 align-self: center;
-//                 color: $primaire;
-//                 font-size: 30px;
-//                 animation: loadingSpinner 1ms 1000ms linear both infinite;
-//             }
-//         }
-//     }
-// }
+.appear__item{
+    animation: appear 900ms both;
+    animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+}
 
-// @keyframes hideSpin{
-//     from{
-//         overflow-y: hidden;
-//     }
-//     to{
-//         overflow-y: scroll;
-//     }
-// }
-// @keyframes loading{
-//     from{
-//         opacity: 1;
-//         z-index: 3;
-//     }
-//     90%{
-//         opacity: 1;
-//         z-index: 3;
-//     }
-//     to{
-//         opacity: 0;
-//         z-index: -5;
-//     }
-// }
-// @keyframes loadingSpinner{
-//     from {
-//         transform: opacity(0);
-//         color: $tertiaire;
-//     }
-//     25% {
-//         color: $secondaire;
-//     }
-//     50%{
-//         color: $primaire;
-//         transform: opacity(1);
-//     }
-//     to {
-//         color: $primaire;
-//     }
-// }
+@keyframes appear{
+    from{
+        opacity: 0;
+        margin-bottom: -40px;
+    }
+    to{
+        opacity: 1;
+        margin-bottom: 0px;
+    }
+}
+
+
+
+/* ---------------- Animation d'arrivée sur Teddy's Page ---------------- */
+
+
+
+.appear__teddyItem1{
+    animation: appearTeddy 500ms both;
+    animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+    animation-delay: 5ms;
+}
+.appear__teddyItem2{
+    animation: appearTeddy 500ms both;
+    animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+    animation-delay: 150ms;
+}
+.appear__teddyItem3{
+    animation: appearTeddy 500ms both;
+    animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+    animation-delay: 300ms;
+}
+.appear__teddyItem4{
+    animation: appearTeddy 500ms both;
+    animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+    animation-delay: 450ms;
+}
+.appear__teddyItem5{
+    animation: appearTeddy 500ms both;
+    animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+    animation-delay: 600ms;
+}
+
+@keyframes appearTeddy{
+    from{
+        opacity: 0;
+        margin-bottom: -40px;
+    }
+    to{
+        opacity: 1;
+        margin-bottom: 0px;
+    }
+}
+
+

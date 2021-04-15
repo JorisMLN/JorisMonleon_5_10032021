@@ -39,30 +39,32 @@ function main() {
 
 function getArticleTemplate(teddy) {
     return `<article class="teddy__page">
-                <div class="teddy__page--left">
+                <div class="teddy__page--left appear__teddyItem1">
                     <img src="${teddy.imageUrl}" alt="ours en peluche">
                 </div>
-                <div class="teddy__page--right">
+                <div class="teddy__page--right appear__teddyItem2">
                     <div class="teddy__page--right--nameID">
                         <h1>${teddy.name}</h1>
                         <h2>ID: ${teddy._id}</h2>
                     </div>
-                <div class="teddy__page--right--description">
+                <div class="teddy__page--right--description appear__teddyItem3">
                     <p> ${teddy.description} </p>
                 </div>
-                
-                <div class="teddy__page--right--bottom">
+                <div class="plusUn">+1</div>
+                <object data="images/teddy-bear.svg" width="120" height="120" class="appear__teddyItem4"> </object>
+                <div class="teddy__page--right--bottom appear__teddyItem5">
                     <div class="teddyColor">
                         <label> Couleur : </label>
                         <select name="couleur" id="teddyColors">
                         </select>
                     </div>
                     <a class="button" id="buttonTeddy">Ajouter au Panier</a>
-                    <div class="plusUn">+1</div>
+                    
                 </div>
             </article>
         `;
 }
+
 
 function setColorsOptions(teddy) {
     let colorString = '';

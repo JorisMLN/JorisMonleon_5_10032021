@@ -418,7 +418,7 @@ footer {
           align-items: center;
   text-align: justify;
   border-radius: 5px;
-  width: 90%;
+  width: 80%;
   height: 55%;
 }
 
@@ -432,11 +432,23 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   color: green;
-  font-size: 40px;
+  font-size: 30px;
+  opacity: 0;
   -webkit-transition: -webkit-transform 500ms ease-in-out;
   transition: -webkit-transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+.container .teddy__page--right .appear__teddyItem4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .teddy__page--right--bottom {
@@ -938,6 +950,101 @@ footer {
 
 /* Variables */
 /* Mixins */
-/* Animation d'arrivée sur la page */
-/* Loading Animation */
+/* ---------------- Animation d'arrivée sur Index ---------------- */
+.appear__item {
+  -webkit-animation: appear 900ms both;
+          animation: appear 900ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+    margin-bottom: -40px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    margin-bottom: -40px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+}
+
+/* ---------------- Animation d'arrivée sur Teddy's Page ---------------- */
+.appear__teddyItem1 {
+  -webkit-animation: appearTeddy 500ms both;
+          animation: appearTeddy 500ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+  -webkit-animation-delay: 5ms;
+          animation-delay: 5ms;
+}
+
+.appear__teddyItem2 {
+  -webkit-animation: appearTeddy 500ms both;
+          animation: appearTeddy 500ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+
+.appear__teddyItem3 {
+  -webkit-animation: appearTeddy 500ms both;
+          animation: appearTeddy 500ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.appear__teddyItem4 {
+  -webkit-animation: appearTeddy 500ms both;
+          animation: appearTeddy 500ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+
+.appear__teddyItem5 {
+  -webkit-animation: appearTeddy 500ms both;
+          animation: appearTeddy 500ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+@-webkit-keyframes appearTeddy {
+  from {
+    opacity: 0;
+    margin-bottom: -40px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+}
+
+@keyframes appearTeddy {
+  from {
+    opacity: 0;
+    margin-bottom: -40px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
