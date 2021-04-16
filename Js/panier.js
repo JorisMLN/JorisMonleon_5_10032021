@@ -91,8 +91,6 @@ function bindRemoveTeddy(panier) {
 function postCommand(panier) {
     let btnCommand = document.getElementById("btnCommand");
     btnCommand.addEventListener('click', function () {
-
-
         let objetContact = {
             lastName: document.getElementById("nom").value,
             firstName: document.getElementById("prenom").value,
@@ -112,7 +110,6 @@ function postCommand(panier) {
             //     result.push({teddyId: panier.teddies[teddyId].quantity})
             //     return result;
             // }, [])
-
             let panierArray = [];
             Object.keys(panier.teddies).forEach((teddyId) => {
 
@@ -125,7 +122,6 @@ function postCommand(panier) {
             })
 
             let commande = { contact: objetContact, products: panierArray };
-
             fetch("http://localhost:3000/api/teddies/order",
                 {
                     headers: {
@@ -145,7 +141,6 @@ function postCommand(panier) {
                 .catch((error) => {
                     console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message)
                 });
-
 
             // let postCommand = new XMLHttpRequest();
             // postCommand.onreadystatechange = function () {

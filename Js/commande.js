@@ -20,9 +20,15 @@ function getCommandTemplate(commande) {
     return `
             <img src="images/logotest.png">
             <p class="main__thanks">Merci beaucoup pour votre commande ! Vive les Teddies o/</p>
-            <p class="main__total">Total de la commande: ${getTotalCommande(commande)}</p>
-            <p class="main__id">Identifiant de la commande: ${commande.orderId}</p>
-    `;
+            <object data="images/thank-you.svg" width="70" height="70"> </object>
+            <div class="sumAndId">
+                <p class="sumAndId__total">Total de la commande:   ${getTotalCommande(commande)}</p>
+                <p class="sumAndId__id">Identifiant de la commande:   ${commande.orderId}</p>
+            </div>
+            <div>
+                <a href="index.html">Retour à la Home page</a>
+            </div>
+        `;
 }
 
 function getTotalCommande(commande) {
