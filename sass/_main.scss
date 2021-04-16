@@ -158,16 +158,17 @@ body{
                 overflow: hidden;
                 &__price{
                     border: 2px solid $tertiaire;
-                    border-radius: 10px;
-                    width: 30%;
-                    height: 30%;
+                    border-radius: 5px;
+                    width: 40%;
+                    height: 40%;
                     @include flexAroundCenter;
-                    font-weight: bold;
+                    // font-weight: bold;
+                    font-size: 25px;
                 }
                 .button{
                     border: 2px solid $primaire;
                     background-color: $fire;
-                    border-radius: 10px;
+                    border-radius: 5px;
                     width: 80%;
                     height: 40%;
                     @include flexAroundCenter;
@@ -260,8 +261,8 @@ footer{
             .teddyColor{
                 @include flexAroundCenter;
                 border: 1px solid $secondaire;
-                border-radius: 10px;
-                width: 55%;
+                border-radius: 5px;
+                width: 40%;
                 height: 12%;
             }
             &--bottom{
@@ -272,14 +273,15 @@ footer{
                 .plusUn{
                     @include flexAroundCenter;
                     color: green;
-                    font-size: 30px;
+                    font-size: 40px;
+                    width: 50px;
                     opacity: 0;
-                    border: 1px solid red;
+                    z-index: -5;
                 }
                 #buttonTeddy{
                     @include flexAroundCenter;
                     border: 2px solid $primaire;
-                    border-radius: 10px;
+                    border-radius: 5px;
                     width: 60%;
                     height: 50%;
                     cursor: pointer;
@@ -290,16 +292,12 @@ footer{
                         background-color: $tertiaire;
                         border: 2px solid $secondaire;
                     }
-                    &:active + .plusUn{
+                    &:not(:active) + .plusUn{
                         animation: plusOne 1500ms both;
                         animation-timing-function: cubic-bezier(.34,.08,.2,.99);
                     }
                     &:active{
                         background-color: lighten($tertiaire, $amount: 10);
-                        // &>.plusUn{
-                        //     animation: plusOne 500ms both;
-                        //     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-                        // }
                     }
                 }
             } 
@@ -328,7 +326,7 @@ footer{
         @include flexAroundCenter;
         height: 85%;
         width: 90%;
-        border-radius: 10px;
+        border-radius: 5px;
         // border: 1px solid $primaire;
         background-color: $sand;
         &--left{
@@ -337,15 +335,15 @@ footer{
             width: 38%;
             height: 90%;
             border-radius: 10px;
-            border: 2px solid $primaire;
+            // border: 2px solid $primaire;
             .recapPanier-title{
                 @include flexAroundCenter;
-                // border: 1px solid $tertiaire;
+                border: 1px solid $primaire;
                 width: 99%;
                 height: 10%;
-                border-radius: 10px 10px 0px 0px;
+                border-radius: 5px 5px 0px 0px;
                 h2{
-                    font-size: 1.2em;
+                    font-size: 1.5em;
                 }
             }
             .recapPanier{
@@ -354,7 +352,7 @@ footer{
                 height: 80%;
                 &__teddy{
                     @include flexBetweenCenter;
-                    border: 1px solid $primaire;
+                    border: 1px solid wheat;
                     flex-direction: row;
                     height: 20%;
                     width: 100%;
@@ -377,16 +375,23 @@ footer{
                             height: 100%;
                             &__name{
                                 @include flexAroundCenter;
-                                justify-content: flex-end;
+                                // justify-content: flex-end;
                                 height: 50%;
                                 width: 70%;
-                                font-weight: bold;
+                                // font-weight: bold;
+                                font-size: 17px;
+                                &--price{
+                                    font-family: 'Vanilla', Impact, 'Arial Narrow Bold', sans-serif;
+                                    color: $primaire;
+                                    font-size: 14px;
+                                }
                             }
                             &__incrementation{
                                 @include flexAroundCenter;
-                                border: 1px solid red;
                                 height: 50%;
                                 width: 30%;
+                                color: $secondaire;
+                                font-size: 18px;
                             }
                             &__id{
                                 @include flexAroundCenter;
@@ -406,13 +411,15 @@ footer{
                             @include flexAroundCenter;
                             height: 50%;
                             width: 99%;
+                            font-family: 'Vanilla', Impact, 'Arial Narrow Bold', sans-serif;
+                            font-size: 16px;
                         }
                         .teddyRemove{
                             @include flexAroundCenter;
                             color: black;
                             text-decoration: none;
                             border: 2px solid $primaire;
-                            border-radius: 10px;
+                            border-radius: 5px;
                             width: 65%;
                             height: 33%;
                             cursor: pointer;
@@ -420,7 +427,7 @@ footer{
                                 color: $primaire;
                                 font-size: 22px;
                                 background-color: $secondaire;
-                                border: 3px solid $primaire;
+                                border: 2px solid $primaire;
                                 width: 70%;
                                 // height: 35%;
                             }
@@ -433,11 +440,12 @@ footer{
             }
             #priceCommand{
                 @include flexAroundCenter;
-                width: 99%;
-                font-weight: bold;
+                width: 85%;
+                // font-weight: bold;
+                font-size: 1.5em;
                 height: 10%;
-                border-radius: 0px 0px 10px 10px;
-                // border: 1px solid $primaire;
+                border-radius: 5px;
+                border: 1px solid $primaire;
             }
         }
         &--right{
@@ -445,19 +453,22 @@ footer{
             flex-direction: column;
             width: 58%;
             height: 90%;
-            border-radius: 10px;
+            border-radius: 5px;
             // border: 1px solid $primaire;
             .formulaire{
                 @include flexAroundCenter;
                 width: 100%;
                 height: 60%;
-                border-radius: 10px;
-                border: 2px solid $tertiaire;
+                border-radius: 5px;
+                border: 1px solid black;
                 padding: 20px;
+                legend{
+                    color: $secondaire;
+                }
             }
             .button{
                 border: 2px solid $primaire;
-                border-radius: 10px;
+                border-radius: 5px;
                 width: 40%;
                 height: 15%;
                 @include flexAroundCenter;
@@ -492,8 +503,8 @@ footer{
         flex-direction: column;
         height: 85%;
         width: 60%;
-        border-radius: 10px;
-        border: 1px solid $primaire;
+        border-radius: 5px;
+        border: 1px solid black;
         background-color: $sand;
         img{
             @include flexAroundCenter;
@@ -505,7 +516,7 @@ footer{
             @include flexAroundCenter;
             flex-direction: column;
             border: 1px solid $primaire;
-            border-radius: 10px;
+            border-radius: 5px;
             height: 10%;
             width: 90%;
         }
@@ -513,7 +524,7 @@ footer{
             @include flexBetweenCenter;
             flex-direction: column;
             border: 1px solid $primaire;
-            border-radius: 10px;
+            border-radius: 5px;
             height: 20%;
             width: 90%;
             &__total{

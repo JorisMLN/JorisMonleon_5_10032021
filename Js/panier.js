@@ -54,9 +54,11 @@ function getPanierTemplate(teddyId, panier) {
                     <div class="title">
                         <div class="title__name">
                             ${panier.teddies[teddyId].name}
-                            $${panier.teddies[teddyId].price} 
+                            <div class="title__name--price">
+                                $ ${panier.teddies[teddyId].price} 
+                            </div>
                         </div>
-                        <div class="incrementation">
+                        <div class="title__incrementation">
                            X ${panier.teddies[teddyId].quantity} =
                         </div>
                         <div class="title__id">
@@ -66,7 +68,7 @@ function getPanierTemplate(teddyId, panier) {
                 </div>
 
                 <div class="recapPanier__teddy__right">
-                    <div class="recapPanier__right__price"> 
+                    <div class="recapPanier__teddy__right__price"> 
                         $${panier.teddies[teddyId].price * panier.teddies[teddyId].quantity}
                     </div>
                     <a class="teddyRemove" id="${teddyId}"> X </a>
