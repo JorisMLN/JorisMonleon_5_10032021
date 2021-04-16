@@ -14,19 +14,21 @@ function main() {
 
     let mainString = document.getElementById("main");
     mainString.innerHTML = getCommandTemplate(commande);
+
+    sessionStorage.clear();
 }
 
 function getCommandTemplate(commande) {
     return `
-            <img src="images/logotest.png">
-            <p class="main__thanks">Merci beaucoup pour votre commande ! Vive les Teddies o/</p>
-            <object data="images/thank-you.svg" width="70" height="70"> </object>
-            <div class="sumAndId">
+            <img src="images/logotest.png" class="appear__teddyItem1">
+            <p class="main__thanks appear__teddyItem2">Merci beaucoup pour votre commande ! Vive les Teddies o/</p>
+            <object data="images/thank-you.svg" width="70" height="70" class="appear__teddyItem3"> </object>
+            <div class="sumAndId appear__teddyItem4">
                 <p class="sumAndId__total">Total de la commande:   ${getTotalCommande(commande)}</p>
                 <p class="sumAndId__id">Identifiant de la commande:   ${commande.orderId}</p>
             </div>
             <div>
-                <a href="index.html">Retour à la Home page</a>
+                <a href="index.html" class="appear__teddyItem5">Retour à la Home page</a>
             </div>
         `;
 }
