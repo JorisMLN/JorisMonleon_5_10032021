@@ -61,7 +61,13 @@ body{
                     border-radius: 8px;
                     background-color: $sand;
                     &:hover{
+                        color: $primaire;
+                        font-size: 20px;
                         background-color: $tertiaire;
+                        border: 2px solid $secondaire;
+                    }
+                    &:active{
+                        background-color: lighten($tertiaire, $amount: 10);
                     }
                 }   
             }
@@ -78,7 +84,13 @@ body{
                     border-radius: 8px;
                     background-color: $sand;
                     &:hover{
+                        color: $primaire;
+                        font-size: 20px;
                         background-color: $tertiaire;
+                        border: 2px solid $secondaire;
+                    }
+                    &:active{
+                        background-color: lighten($tertiaire, $amount: 10);
                     }
                 }   
             }  
@@ -159,7 +171,10 @@ body{
                     width: 80%;
                     height: 40%;
                     @include flexAroundCenter;
+                    font-size: 20px;
                     &:hover{
+                        color: $primaire;
+                        font-size: 25px;
                         background-color: $tertiaire;
                         border: 2px solid $secondaire;
                     }
@@ -268,7 +283,10 @@ footer{
                     width: 60%;
                     height: 50%;
                     cursor: pointer;
+                    font-size: 25px;
                     &:hover{
+                        color: $primaire;
+                        font-size: 27px;
                         background-color: $tertiaire;
                         border: 2px solid $secondaire;
                     }
@@ -399,7 +417,15 @@ footer{
                             height: 33%;
                             cursor: pointer;
                             &:hover{
-                                background-color: orange;
+                                color: $primaire;
+                                font-size: 22px;
+                                background-color: $secondaire;
+                                border: 3px solid $primaire;
+                                width: 70%;
+                                // height: 35%;
+                            }
+                            &:active{
+                                background-color: lighten($primaire, $amount: 10);
                             }
                         }
                     }
@@ -435,9 +461,12 @@ footer{
                 width: 40%;
                 height: 15%;
                 @include flexAroundCenter;
+                font-size: 22px;
                 &:hover{
+                    color: $primaire;
+                    font-size: 26px;
                     background-color: $tertiaire;
-                    border: 2px solid $secondaire;
+                    border: 3px solid $secondaire;
                 }
                 &:active{
                     background-color: lighten($tertiaire, $amount: 10);
