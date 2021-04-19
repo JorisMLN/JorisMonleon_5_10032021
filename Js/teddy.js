@@ -93,15 +93,16 @@ function addTeddyToCart(teddy) {
 /* Function de gestion du panier pour le sessionStorage */
 function cart(teddy) {
     let panier;
-    if (sessionStorage.panier === undefined || sessionStorage.panier === null) { /*(!sessionsStorage.teddies)*/
+    if (localStorage.panier === undefined || localStorage.panier === null) { /*(!sessionsStorage.teddies)*/
         panier = new Panier('John Doe', {});
     } else {
-        let panier_json = sessionStorage.getItem("panier");
+        let panier_json = localStorage.getItem("panier");
         panier = Object.assign(new Panier, JSON.parse(panier_json));
     }
     panier.addItem(teddy._id, teddy);
-    sessionStorage.setItem("panier", JSON.stringify(panier));
-    console.log(JSON.parse(sessionStorage.panier));
+    // sessionStorage.setItem("panier", JSON.stringify(panier));
+    localStorage.setItem("panier", JSON.stringify(panier));
+    console.log(JSON.parse(localStorage.panier));
 };
 
 

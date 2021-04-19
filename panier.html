@@ -9,8 +9,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8">
 
-    <!-- <script src="https://kit.fontawesome.com/e7a1eca83b.js" crossorigin="anonymous"></script> -->
-
     <title>Panier Orinoco</title>
 </head>
 
@@ -40,50 +38,45 @@
 
     <!-- Main -->
     <section class="container">
-        <!-- <h1>P A N I E R</h1> -->
         <article class="panier__page" id="emptyCart">
             <div class="panier__page--left">
                 <div class="recapPanier-title">
                     <h2>Récapitulatif de la commande</h2>
                 </div>
                 <div class="recapPanier appear__teddyItem1" id="recapPanier">
-                   
+
                 </div>
                 <div id="priceCommand"></div>
             </div>
             <div class="panier__page--right">
-                <div class="formulaire appear__teddyItem2">
-                    <form method="post">
+                <form method="post" class="formulaire appear__teddyItem2">
+                    <fieldset>
+                        <legend>Identité</legend>
+                        <label for="nom">Nom:</label>
+                        <input type="text" name="nom" id="nom" minlength="2" value="Dupont" required />
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" name="prenom" id="prenom" minlength="2" value="Martin" required />
+                        <br />
+                    </fieldset></br>
 
-                        <fieldset>
-                            <legend>Identité</legend>
-                            <label for="nom">Nom:</label>
-                            <input type="text" name="nom" id="nom" minlength="2" value="Dupont" required/>
-                            <label for="prenom">Prénom:</label>
-                            <input type="text" name="prenom" id="prenom" minlength="2" value="Martin" required/>
-                            <br />
-                        </fieldset></br>
+                    <fieldset>
+                        <legend>Lieu de résidence</legend>
+                        <label for="adress">Adress:</label>
+                        <input type="text" name="adress" id="adress" value="3 rue haute" required />
+                        <label for="ville">Ville:</label>
+                        <input type="text" name="ville" id="ville" value="Toulouse" required />
+                    </fieldset></br>
 
-                        <fieldset>
-                            <legend>Lieu de résidence</legend>
-                            <label for="adress">Adress:</label>
-                            <input type="text" name="adress" id="adress" value="3 rue haute" required/>
-                            <label for="ville">Ville:</label>
-                            <input type="text" name="ville" id="ville" value="Toulouse" required/>
-                        </fieldset></br>
-
-                        <fieldset>
-                            <legend>Pour vous contacter</legen>
+                    <fieldset>
+                        <legend>contacte</legen>
                             <label for="email">E-mail:</label>
-                            <input type="email" name="email" id="email" value="testtest@gmail.com"required/>
-                        </fieldset>
+                            <input type="email" name="email" id="email" 
+                                value="testtest@gmail.com" required />
+                    </fieldset>
 
-                        <!-- <a class="button" id="btnCommand" type="submit">Commander !</a> -->
-                        
-                     </form>
-                </div>
-                <a class="button appear__teddyItem3" id="btnCommand">Commander !</a>
-            </div> 
+                    <a class="button appear__teddyItem3" type="submit" id="btnCommand">Commander !</a>
+                </form>
+            </div>
         </article>
     </section>
 
@@ -104,10 +97,11 @@
             <object data="images/teddy-bear-footer2.svg" width="70" height="70"> </object>
         </div>
     </footer>
-    
+
     <!-- Script -->
     <script type="module" src="js/panierClass.js"></script>
     <script type="module" src="js/panier.js"></script>
-    
+
 </body>
+
 </html>

@@ -9,7 +9,8 @@ main();
 /* ---------------- F U N C T I O N S ---------------- */
 
 function main() {
-    let panier_json = sessionStorage.getItem("panier");
+    // let panier_json = sessionStorage.getItem("panier");
+    let panier_json = localStorage.getItem("panier");
     let panier = Object.assign(new Panier, JSON.parse(panier_json));
     console.log(panier);
 
@@ -41,7 +42,7 @@ function generatePanier(panier) {
 }
 
 function checkEmptyCart(panier) {
-    return sessionStorage.panier === undefined || sessionStorage.panier === null || Object.keys(panier.teddies).length === 0;
+    return localStorage.panier === undefined || localStorage.panier === null || Object.keys(panier.teddies).length === 0;
 }
 
 function getPanierTemplate(teddyId, panier) {
@@ -83,8 +84,8 @@ function bindRemoveTeddy(panier) {
         btnTeddy.addEventListener('click', function (event) {
             console.log(event.target.id);
             panier.removeItem(event.target.id);
-            sessionStorage.setItem("panier", JSON.stringify(panier));
-            console.log(JSON.parse(sessionStorage.panier));
+            localStorage.setItem("panier", JSON.stringify(panier));
+            console.log(JSON.parse(localStorage.panier));
             generatePanier(panier);
         });
     });
