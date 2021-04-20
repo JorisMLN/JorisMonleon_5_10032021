@@ -16,7 +16,8 @@ function main(){
         loopHtmlString(theResponse);
     })
     .catch((error) => { 
-        console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message) 
+        console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message)
+        teddyList.innerHTML = "<h2> OUPS, le serveur ne veut pas nous parler :( </h2>"
     });
 }
 
