@@ -61,8 +61,10 @@ function getArticleTemplate(teddy) {
                     </div>
 
                     <div class="teddy__page--right--bottom appear__teddyItem5">
-                        <a class="button" id="buttonTeddy">Ajouter au Panier</a>
-                        <div class="plusUn">+1</div>
+                        <div class="blocBtn">
+                            <a class="button" id="buttonTeddy">Ajouter au Panier</a>
+                        </div>
+                        <!-- <div class="plusUn">+1</div> -->
                         <object data="images/teddy-bear.svg" width="100" height="100" > </object>
                     </div>
                 </div>

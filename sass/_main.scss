@@ -270,35 +270,80 @@ footer{
                 border-radius: 5px;
                 width: 80%;
                 height: 30%;
+                
+                .blocBtn{
+                    @include flexAroundCenter;
+                    width: 50%;
+                    height: 50%;
+                    position: relative;
+                    #buttonTeddy{
+                        @include flexAroundCenter;
+                        background-color: $secondaire;
+                        border: 2px solid $primaire;
+                        border-radius: 5px;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        font-size: 23px;
+                        &:hover{
+                            color: $primaire;
+                            font-size: 25px;
+                            background-color: $tertiaire;
+                            border: 2px solid $secondaire;
+                        }
+                        &:before{
+                            content: "";
+                            background: transparent url(images/addOne50.png) 0 0 no-repeat;
+                            width: 0;
+                            opacity: 0;
+                            height: 50px;
+                            position: absolute;
+                            left: 35%;
+                            bottom: 70%;
+                        }
+                        &:not(:active):before{
+                            animation: plusOne 1500ms both;
+                            animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+                            transition: width 1500ms step-end;
+                        }
+                        &:active:before{
+                            width: 50px;
+                            transition: width 1500ms step-start;
+                        }
+                        // &:focus{
+                        //     background-color: lighten($tertiaire, $amount: 10);
+                        //     +.plusUn{
+                        //         animation: plusOne 1500ms both;
+                        //         animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+                        //     }
+                        // }
+                        // &:not(:active):before + .plusUn{
+                        //     animation: plusOne 1500ms both;
+                        //     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+                        //     transition: width 500ms step-end;
+                        // }
+                        // &:active:before + .plusUn{
+                        //     width: 50px;
+                        //     transition: width 500ms step-start;
+                        // }
+                        &:active{
+                            background-color: lighten($tertiaire, $amount: 10);
+                            // +.plusUn{
+                            //     animation: plusOne 1500ms both;
+                            //     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
+                            // }
+                        } 
+                    }
+                }
                 .plusUn{
                     @include flexAroundCenter;
                     color: green;
                     font-size: 40px;
-                    width: 50px;
-                    opacity: 0;
-                    z-index: -5;
+                    // opacity: 0;
                 }
-                #buttonTeddy{
-                    @include flexAroundCenter;
-                    border: 2px solid $primaire;
-                    border-radius: 5px;
-                    width: 60%;
-                    height: 50%;
-                    cursor: pointer;
-                    font-size: 25px;
-                    &:hover{
-                        color: $primaire;
-                        font-size: 27px;
-                        background-color: $tertiaire;
-                        border: 2px solid $secondaire;
-                    }
-                    &:not(:active) + .plusUn{
-                        animation: plusOne 1500ms both;
-                        animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-                    }
-                    &:active{
-                        background-color: lighten($tertiaire, $amount: 10);
-                    }
+                .plusUn:before{
+                    width: 0;
+                    opacity: 0;
                 }
             } 
         }

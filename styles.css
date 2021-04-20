@@ -509,6 +509,75 @@ footer {
   height: 30%;
 }
 
+.container .teddy__page--right--bottom .blocBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+
+.container .teddy__page--right--bottom .blocBtn #buttonTeddy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #D98B48;
+  border: 2px solid #732002;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.container .teddy__page--right--bottom .blocBtn #buttonTeddy:hover {
+  color: #732002;
+  font-size: 25px;
+  background-color: #F2AC57;
+  border: 2px solid #D98B48;
+}
+
+.container .teddy__page--right--bottom .blocBtn #buttonTeddy:before {
+  content: "";
+  background: transparent url(images/addOne50.png) 0 0 no-repeat;
+  width: 0;
+  opacity: 0;
+  height: 50px;
+  position: absolute;
+  left: 35%;
+  bottom: 70%;
+}
+
+.container .teddy__page--right--bottom .blocBtn #buttonTeddy:not(:active):before {
+  -webkit-animation: plusOne 1500ms both;
+          animation: plusOne 1500ms both;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
+  -webkit-transition: width 1500ms step-end;
+  transition: width 1500ms step-end;
+}
+
+.container .teddy__page--right--bottom .blocBtn #buttonTeddy:active:before {
+  width: 50px;
+  -webkit-transition: width 1500ms step-start;
+  transition: width 1500ms step-start;
+}
+
+.container .teddy__page--right--bottom .blocBtn #buttonTeddy:active {
+  background-color: #f6c386;
+}
+
 .container .teddy__page--right--bottom .plusUn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,44 +589,11 @@ footer {
           align-items: center;
   color: green;
   font-size: 40px;
-  width: 50px;
+}
+
+.container .teddy__page--right--bottom .plusUn:before {
+  width: 0;
   opacity: 0;
-  z-index: -5;
-}
-
-.container .teddy__page--right--bottom #buttonTeddy {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 2px solid #732002;
-  border-radius: 5px;
-  width: 60%;
-  height: 50%;
-  cursor: pointer;
-  font-size: 25px;
-}
-
-.container .teddy__page--right--bottom #buttonTeddy:hover {
-  color: #732002;
-  font-size: 27px;
-  background-color: #F2AC57;
-  border: 2px solid #D98B48;
-}
-
-.container .teddy__page--right--bottom #buttonTeddy:not(:active) + .plusUn {
-  -webkit-animation: plusOne 1500ms both;
-          animation: plusOne 1500ms both;
-  -webkit-animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
-          animation-timing-function: cubic-bezier(0.34, 0.08, 0.2, 0.99);
-}
-
-.container .teddy__page--right--bottom #buttonTeddy:active {
-  background-color: #f6c386;
 }
 
 /* Panier's Page */
@@ -1134,6 +1170,7 @@ footer {
 @-webkit-keyframes plusOne {
   from {
     opacity: 0;
+    bottom: 70%;
   }
   20% {
     opacity: 1;
@@ -1143,11 +1180,13 @@ footer {
   }
   to {
     opacity: 0;
+    bottom: 120%;
   }
 }
 @keyframes plusOne {
   from {
     opacity: 0;
+    bottom: 70%;
   }
   20% {
     opacity: 1;
@@ -1157,6 +1196,7 @@ footer {
   }
   to {
     opacity: 0;
+    bottom: 120%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
