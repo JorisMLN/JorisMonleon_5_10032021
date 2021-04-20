@@ -2,9 +2,7 @@ import Panier from './panierClass.js';
 
 /* ---------------- P A G E - T E D D Y ---------------- */
 
-
 main();
-
 
 /* ---------------- F U N C T I O N S ---------------- */
 
@@ -93,49 +91,14 @@ function addTeddyToCart(teddy) {
 /* Function de gestion du panier pour le sessionStorage */
 function cart(teddy) {
     let panier;
-    if (localStorage.panier === undefined || localStorage.panier === null) { /*(!sessionsStorage.teddies)*/
+    if (localStorage.panier === undefined || localStorage.panier === null) {
         panier = new Panier('John Doe', {});
     } else {
         let panier_json = localStorage.getItem("panier");
         panier = Object.assign(new Panier, JSON.parse(panier_json));
     }
     panier.addItem(teddy._id, teddy);
-    // sessionStorage.setItem("panier", JSON.stringify(panier));
     localStorage.setItem("panier", JSON.stringify(panier));
     console.log(JSON.parse(localStorage.panier));
 };
 
-
-
-
-/* ---------------- 2 N D E - W A Y ---------------- */
-
-// function main() {
-//     /* Récupération des paramètres dans l'URL */ /* exemple: ?id=5be9c8541c9d440000665243 */
-//     let teddyParameters = window.location.search;
-//     let teddyApiParameters = teddyParameters.substr(4);
-//     console.log(teddyApiParameters);
-
-//     let requestTeddy = new XMLHttpRequest();
-//     requestTeddy.onreadystatechange = function () {
-//         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-//             let teddy = JSON.parse(this.responseText);
-//             console.log(teddy);
-
-//             /* HTML dynamique pour les pages Teddy en details */
-//             let htmlString = getArticleTemplate(teddy);
-
-//             /* Variable de la Div qui accueille le details */
-//             let teddyPage = document.getElementById('teddyPage');
-//             teddyPage.innerHTML = htmlString;
-
-//             /* Boucle pour les couleurs des Teddies */
-//             setColorsOptions(teddy);
-
-//             /* Ecoute du click d'ajout au panier */
-//             addTeddyToCart(teddy);
-//         }
-//     }
-//     requestTeddy.open("GET", `http://localhost:3000/api/teddies/${teddyApiParameters}`);
-//     requestTeddy.send();
-// }

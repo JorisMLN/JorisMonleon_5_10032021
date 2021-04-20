@@ -2,14 +2,11 @@ import Panier from './panierClass.js';
 
 /* ---------------- P A G E - P A N I E R ---------------- */
 
-
 main();
-
 
 /* ---------------- F U N C T I O N S ---------------- */
 
 function main() {
-    // let panier_json = sessionStorage.getItem("panier");
     let panier_json = localStorage.getItem("panier");
     let panier = Object.assign(new Panier, JSON.parse(panier_json));
     console.log(panier);
@@ -93,13 +90,19 @@ function bindRemoveTeddy(panier) {
 
 function postCommand(panier) {
     let btnCommand = document.getElementById("btnCommand");
-    btnCommand.addEventListener('click', function () {
+    btnCommand.addEventListener('click', function (event) {
+        event.preventDefault();
         let objetContact = {
             lastName: document.getElementById("nom").value,
             firstName: document.getElementById("prenom").value,
             address: document.getElementById("adress").value,
             city: document.getElementById("ville").value,
             email: document.getElementById("email").value
+        }
+
+        if (validateEmail(objetContact.email) == false ){
+            alert("verifier adresse email");
+            return;
         }
 
         if (objetContact.lastName
@@ -109,10 +112,6 @@ function postCommand(panier) {
             && objetContact.email
             && !checkEmptyCart(panier)) {
 
-            // let panierArray = Object.keys(panier.teddies).reduce((result, teddyId) => {
-            //     result.push({teddyId: panier.teddies[teddyId].quantity})
-            //     return result;
-            // }, [])
             let panierArray = [];
             Object.keys(panier.teddies).forEach((teddyId) => {
 
@@ -138,28 +137,17 @@ function postCommand(panier) {
                     return response.json()
                 })
                 .then((lastResponse) => {
-                    sessionStorage.setItem("order", JSON.stringify(lastResponse));
+                    localStorage.setItem("order", JSON.stringify(lastResponse));
                     window.location = "http://127.0.0.1:5500/commande.html";
                 })
                 .catch((error) => {
                     console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message)
                 });
-
-            // let postCommand = new XMLHttpRequest();
-            // postCommand.onreadystatechange = function () {
-            //     if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
-            //         sessionStorage.setItem("order", this.response);
-            //         console.log(JSON.parse(this.response));
-            //         window.location = "http://127.0.0.1:5500/commande.html";
-            //     }
-            // }
-
-            // postCommand.open("POST", "http://localhost:3000/api/teddies/order");
-            // postCommand.setRequestHeader("content-Type", "application/json");
-            // postCommand.send(JSON.stringify(commande));
-            // console.log(JSON.stringify(commande));
         }
     });
 }
 
-
+function validateEmail(email) {
+    let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}

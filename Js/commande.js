@@ -1,21 +1,18 @@
 
 /* ---------------- P A G E - C O M M A N D E ---------------- */
 
-
 main();
-
 
 /* ---------------- F U N C T I O N ---------------- */
 
 function main() {
-    let commande_json = sessionStorage.getItem("order");
+    let commande_json = localStorage.getItem("order");
     let commande = JSON.parse(commande_json);
     console.log(commande);
 
     let mainString = document.getElementById("main");
     mainString.innerHTML = getCommandTemplate(commande);
 
-    // sessionStorage.clear();
     localStorage.clear();
 }
 

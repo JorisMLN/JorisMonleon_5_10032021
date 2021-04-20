@@ -1005,7 +1005,6 @@ footer {
 }
 
 .container .main .sumAndId__total__commande {
-  font-weight: bold;
   font-family: Impact, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -1027,7 +1026,6 @@ footer {
 }
 
 .container .main .sumAndId__id__order {
-  font-weight: bold;
   font-family: Impact, 'Arial Narrow Bold', sans-serif;
 }
 
