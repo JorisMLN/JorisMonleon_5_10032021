@@ -310,28 +310,8 @@ footer{
                             width: 50px;
                             transition: width 1500ms step-start;
                         }
-                        // &:focus{
-                        //     background-color: lighten($tertiaire, $amount: 10);
-                        //     +.plusUn{
-                        //         animation: plusOne 1500ms both;
-                        //         animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-                        //     }
-                        // }
-                        // &:not(:active):before + .plusUn{
-                        //     animation: plusOne 1500ms both;
-                        //     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-                        //     transition: width 500ms step-end;
-                        // }
-                        // &:active:before + .plusUn{
-                        //     width: 50px;
-                        //     transition: width 500ms step-start;
-                        // }
                         &:active{
                             background-color: lighten($tertiaire, $amount: 10);
-                            // +.plusUn{
-                            //     animation: plusOne 1500ms both;
-                            //     animation-timing-function: cubic-bezier(.34,.08,.2,.99);
-                            // }
                         } 
                     }
                 }
