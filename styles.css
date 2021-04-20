@@ -183,6 +183,12 @@ body footer {
   width: 100%;
 }
 
+.container .blockTeddyList h2 {
+  color: #F2AC57;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
 .container .blockTeddyList .row {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -107,6 +107,10 @@ body{
         // flex-direction: column;
         height: 98%;
         width: 100%;
+        h2{
+            color: $tertiaire;
+            animation-delay: 1000ms;
+        }
         .row{
             @include flexAroundCenter;
             border-radius: 4px;
