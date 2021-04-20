@@ -124,7 +124,8 @@ function postCommand(panier) {
             })
 
             let commande = { contact: objetContact, products: panierArray };
-            fetch("http://localhost:3000/api/teddies/order",
+            let URL = "http://localhost:3000/api/teddies/order";
+            fetch(URL,
                 {
                     headers: {
                         'Accept': 'application/json',

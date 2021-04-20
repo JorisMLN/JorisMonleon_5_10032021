@@ -6,7 +6,8 @@ main();
 /* ---------------- F U N C T I O N S ---------------- */
 
 function main(){
-    fetch('http://localhost:3000/api/teddies')
+    let URL = 'http://localhost:3000/api/teddies';
+    fetch(URL)
     .then((response) => {
         return response.json()
     })

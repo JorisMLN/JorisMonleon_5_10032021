@@ -11,7 +11,8 @@ function main() {
     let teddyApiParameters = teddyParameters.substr(4);
     console.log(teddyApiParameters);
 
-    fetch(`http://localhost:3000/api/teddies/${teddyApiParameters}`)
+    let URL = `http://localhost:3000/api/teddies/${teddyApiParameters}`;
+    fetch(URL)
         .then((response) => {
             return response.json()
         })
