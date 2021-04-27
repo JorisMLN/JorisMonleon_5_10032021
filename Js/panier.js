@@ -1,4 +1,5 @@
 import Panier from './panierClass.js';
+import baseURL from './const.js';
 
 /* ---------------- P A G E - P A N I E R ---------------- */
 
@@ -125,8 +126,7 @@ function postCommand(panier) {
             })
 
             let commande = { contact: objetContact, products: panierArray };
-            let URL = "http://localhost:3000/api/teddies/order";
-            fetch(URL,
+            fetch(baseURL + "/order",
                 {
                     headers: {
                         'Accept': 'application/json',

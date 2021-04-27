@@ -1,4 +1,5 @@
 import Panier from './panierClass.js';
+import baseURL from './const.js';
 
 /* ---------------- P A G E - T E D D Y ---------------- */
 
@@ -13,8 +14,7 @@ function main() {
     console.log(teddyApiParameters);
 
     /* Récupération des data sur le serveur */
-    let URL = `http://localhost:3000/api/teddies/${teddyApiParameters}`;
-    fetch(URL)
+    fetch(baseURL + "/" + teddyApiParameters)
         .then((response) => {
             return response.json()
         })
