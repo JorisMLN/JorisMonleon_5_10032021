@@ -6,11 +6,13 @@ main();
 
 /* ---------------- F U N C T I O N S ---------------- */
 
+/* Récupération des des paramètres de l'URL du teddy */
 function main() {
     let teddyParameters = window.location.search;
     let teddyApiParameters = teddyParameters.substr(4);
     console.log(teddyApiParameters);
 
+    /* Récupération des data sur le serveur */
     let URL = `http://localhost:3000/api/teddies/${teddyApiParameters}`;
     fetch(URL)
         .then((response) => {

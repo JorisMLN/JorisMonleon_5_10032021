@@ -5,6 +5,7 @@ main();
 
 /* ---------------- F U N C T I O N ---------------- */
 
+/* Récupération des data sur le localStorage */
 function main() {
     let commande_json = localStorage.getItem("order");
     let commande = JSON.parse(commande_json);
@@ -16,6 +17,7 @@ function main() {
     localStorage.clear();
 }
 
+/* Template HTML pour le page commande avec les infos exposées */
 function getCommandTemplate(commande) {
     return `
             <img src="images/logotest.png" class="appear__teddyItem1">

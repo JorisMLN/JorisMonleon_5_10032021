@@ -6,6 +6,7 @@ main();
 
 /* ---------------- F U N C T I O N S ---------------- */
 
+/* Récupération des data sur le localStorage */
 function main() {
     let panier_json = localStorage.getItem("panier");
     let panier = Object.assign(new Panier, JSON.parse(panier_json));

@@ -1,3 +1,6 @@
+import baseURL from './const.js';
+// import baseURL from './export.js';
+
 
 /* ---------------- T E D D I E S ---------------- */
 
@@ -5,9 +8,9 @@ main();
 
 /* ---------------- F U N C T I O N S ---------------- */
 
+/* Récupération des data sur le serveur */
 function main(){
-    let URL = 'http://localhost:3000/api/teddies';
-    fetch(URL)
+    fetch(baseURL)
     .then((response) => {
         return response.json()
     })
@@ -21,6 +24,7 @@ function main(){
     });
 }
 
+/* Boucle de création dynamique de la list de teddy */
 function loopHtmlString(theResponse) {
     let teddyList = document.getElementById('teddyList');
 
